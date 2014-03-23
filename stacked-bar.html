@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style>
+        body {
+        font: 10px sans-serif;
+        shape-rendering: crispedges;
+        }
+        .axis path,
+        .axis line {
+            fill: none;
+        }
+        .grid .x.axis line {
+            stroke: lightgrey;
+        }
+        .axis text,
+        .legend {
+            stroke: #E0E0EB;
+            stroke-width: .3px;
+        }        
+        rect {
+            fill-opacity: .55;
+        }
+        </style>
+    </head>
+    <body>
+    <script src="libs/d3.v3.min.js"></script>
+
+    <script>
+        
+    var margin = {top: 20, right: 20, bottom: 30, left: 100},
+    width = 760 - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom,
+
+    legendPanel = {
+            width: 240
+    },    
+
+    groups = {
+      SD: "Senate Democrat",
+      HD: "House Democrat",
+      SR: "Senate Republican",
+      HR: "House Republican"
+    },
+
+    colors = {
+      SD: "#4D94DB",
+      HD: "#0066CC",
+      SR: "#E06666",
+      HR: "#CC0000"
+    },
+
+    color = d3.scale.ordinal()
+        .domain([groups.SD, groups.HD, groups.SR, groups.HR])
+        .range([colors.SD, colors.HD, colors.SR, colors.HR]);
+
+    var dataset = [
+        {
+            data: [
+                { keyword: 'Medicare', vote: 3 },
+                { keyword: 'Water', vote: 13 },
+                { keyword: 'Social Security', vote: 15 }
+            ],
+            name: groups.SD
+        },
+        {
+            data: [
+                { keyword: 'Medicare', vote: 12 },
+                { keyword: 'Water', vote: 13 },
+                { keyword: 'Social Security', vote: 5 }
+            ],
+            name: groups.HD
+        },
+        {
+            data: [
+                { keyword: 'Medicare', vote: 3 },
+                { keyword: 'Water', vote: 4 },
+                { keyword: 'Social Security', vote: 1 }
+            ],
+            name: groups.SR
+        },
+        {
+            data: [
+                { keyword: 'Medicare', vote: 3 },
+                { keyword: 'Water', vote: 4 },
+                { keyword: 'Social Security', vote: 5 }
+            ],
+            name: groups.HR
+        }
+    ],
+    series = dataset.map(function(d) { return d.name; }),
+    dataset = dataset.map(function(d) {
+        return d.data.map(function(o, i) {
+            return {
+                x: o.keyword,
+                y: o.vote
+            };
+        });
+    }),
+    //use stack layout 
+    stack = d3.layout.stack();
+    stack(dataset);
+
+    console.log(dataset);
+
+    var dataset = dataset.map(function(group) {
+        return group.map(function(d) {
+            // horizontal bars, invert the x and y values, and y0 becomes x0
+            return {
+                x: d.y,
+                y: d.x,
+                x0: d.y0
+            };
+        });
+    });
+
+    console.log("inverted dataset")
+    console.log(dataset);
+
+    var svg = d3.select('body')
+        .append('svg')
+            .attr('width', width + margin.left + margin.right + legendPanel.width)
+            .attr('height', height + margin.top + margin.bottom)
+        .append('g')
+            .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+            .attr("class", "grid"),
+
+    xMax = d3.max(dataset, function(group) {
+        return d3.max(group, function(d) {
+            return d.x + d.x0;
+        });
+    }),
+    
+    xScale = d3.scale.linear()
+        .domain([0, xMax])
+        .range([0, width - margin.right]),
+
+    keywords = dataset[0].map(function(d) { return d.y; }),
+
+    yScale = d3.scale.ordinal()
+        .domain(keywords)
+        .rangeRoundBands([0, height], .6),
+
+    xAxis = d3.svg.axis()
+        .scale(xScale)
+        .orient('bottom'),
+
+    yAxis = d3.svg.axis()
+        .scale(yScale)
+        .orient('left'),
+
+    groups = svg.selectAll('g')
+        .data(dataset)
+        .enter()
+        .append('g')
+        .style('fill', function(d, i) {
+            return color(i);
+        }),
+
+    rects = groups.selectAll('rect')
+        .data(function(d) { return d; })
+        .enter()
+        .append('rect')
+        .attr('x', function(d) { return xScale(d.x0); })
+        .attr('y', function(d, i) { return yScale(d.y); })
+        .attr('height', function(d) { return yScale.rangeBand(); })
+        .attr('width', function(d) { return xScale(d.x); });
+
+    svg.append('g')
+        .attr('class', 'x axis')
+        .attr('transform', 'translate(0,' + height + ')')
+        .call(xAxis)
+        .append("text")
+        .attr("x", width + 60)
+        .attr("dy", "1.7em")
+        .style("text-anchor", "end")
+        .text("Number of Votes");
+
+    svg.append('g')
+        .attr('class', 'y axis')
+        .call(yAxis);
+
+    svg.append('rect')
+        .attr('fill', 'none')
+        .attr('width', 160)
+        .attr('height', 30 * dataset.length)
+        .attr('x', width + margin.left)
+        .attr('y', 0);
+
+        console.log(color.domain())
+
+  var legend = svg.selectAll(".legend")
+      .data(series) 
+      .enter().append("g")
+      .attr("class", "legend")
+      .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+  legend.append("rect")
+      .attr("x", width + 20)
+      .attr("width", 10)
+      .attr("height", 10)
+      .style("fill", color);
+
+  legend.append("text")
+      .attr("x", width + 35)
+      .attr("y", 10)
+//      .attr("dy", ".15em")
+      .style("text-anchor", "start")
+      .text(function(d) { return d; });
+
+</script>
+</body>
+</html>

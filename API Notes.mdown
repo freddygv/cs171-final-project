@@ -11,7 +11,7 @@
 3. Bills:
   * Top Keywords: http://thomas.loc.gov/cgi-bin/bssQuery/?&Db=113&srch=/home/LegislativeData.php?n=BSS&Opt=f
   * List:
-    * Agriculture and food, Animals, Armed forces and national security, "Arts, culture, religion", "Civil rights and liberties, minority issues", Commerce, Congress, Crime and law enforcement, Economics and public finance, Education, Emergency management, Energy, Environmental protection, Families, Finance and financial sector, Foreign trade and international finance, Fovernment operations and politics, Health, Housing and community development, Immigration, International affairs, Labor and employment, Law, Native Americans, Private legislation, Public lands and natural resources, "Science, technology, communications", Social sciences and history, Social security and elderly assistance, Social welfare, Taxation, Transportation and public works, Water resources development
+    * Agriculture and food, Animals, Armed forces and national security, "Arts, culture, religion", "Civil rights and liberties, minority issues", Commerce, Congress, Crime and law enforcement, Economics and public finance, Education, Emergency management, Energy, Environmental protection, Families, Finance and financial sector, Foreign trade and international finance, Government operations and politics, Health, Housing and community development, Immigration, International affairs, Labor and employment, Law, Native Americans, Private legislation, Public lands and natural resources, "Science, technology, communications", Social sciences and history, Social security and elderly assistance, Social welfare, Taxation, Transportation and public works, Water resources development
 
 ### Working query for vote breakdowns:
 http://congress.api.sunlightfoundation.com/votes?vote_type=passage&result=Passed&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1
@@ -28,11 +28,11 @@ http://congress.api.sunlightfoundation.com/votes?vote_type=passage&result=Passed
   * Page 1
 
 Needs to iterate through: 
-http://congress.api.sunlightfoundation.com/votes?query= ****** &vote_type=passage&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1
+http://congress.api.sunlightfoundation.com/votes?vote_type=passage&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&query=
 
 
 ### Working query for bills:
-http://congress.api.sunlightfoundation.com/bills?keywords= ******* &actions.result=pass&fields=short_title,bill_id,history.vetoed,history.enacted&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1
+http://congress.api.sunlightfoundation.com/bills?actions.result=pass&fields=short_title,bill_id,history.vetoed,history.enacted&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=
 
 1. Filters:
   * Keywords = [keyword]

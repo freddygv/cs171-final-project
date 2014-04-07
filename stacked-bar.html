@@ -74,9 +74,9 @@
         d3.json(bills_url + kword[i], function(error, data) {
           if(error) return console.warn(error);
 
-          incoming = data.results;
           var bills = [];
-
+          
+          incoming = data.results;
           incoming.forEach(function(d) { 
 
             var actions = d.actions;
@@ -109,7 +109,6 @@
           vetoed = enacted = passed = failed = rSponsor = dSponsor = iSponsor = 0;
 
           incoming = bills;
-
           incoming.forEach(function(b) {
 
             if (b.vetoed === true) {

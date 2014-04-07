@@ -42,3 +42,18 @@ http://congress.api.sunlightfoundation.com/bills?actions.result=pass&fields=shor
   * Bill ID
   * Was the bill vetoed?
   * Was the bill enacted?
+
+## Data structure layout:
+###Array
+    [Keywords]:
+        Bill_ID
+        Voted at
+        Chamber
+        Question
+        Result
+        Breakdown:
+          R:
+            Yea
+          D:
+            Yea
+

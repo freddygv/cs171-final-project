@@ -58,13 +58,13 @@
 
     breakdown_url = 'http://congress.api.sunlightfoundation.com/votes?vote_type=passage&result=Passed&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&query=';
 
-    bills_url = 'http://congress.api.sunlightfoundation.com/bills?actions.type=vote&fields=chamber,actions,official_title,short_title,popular_title,bill_id,history.vetoed,history.enacted&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=';
+    bills_url = 'http://congress.api.sunlightfoundation.com/bills?actions.type=vote&fields=sponsor.party,chamber,actions,official_title,short_title,popular_title,bill_id,history.vetoed,history.enacted,last_vote_at&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=';
 
     kword = ["Agriculture and food", "Animals", "Armed forces and national security", "Arts, culture, religion", "Civil rights and liberties, minority issues", "Commerce", "Congress", "Crime and law enforcement", "Economics and public finance", "Education", "Emergency management", "Energy", "Environmental protection", "Families", "Finance and financial sector", "Foreign trade and international finance", "Government operations and politics", "Health, Housing and community development", "Immigration", "International affairs", "Labor and employment", "Law", "Native Americans", "Private legislation", "Public lands and natural resources", "Science, technology, communications", "Social sciences and history", "Social security and elderly assistance", "Social welfare", "Taxation", "Transportation and public works, Water resources development"];
 
-    var i = 0;
-
-    var allData = [];
+    var vetoed, enacted, passed, failed, dSponsor, rSponsor,iSponsor;
+    var rawData = [];
+    var aggData = [];
 
     for (var i = 0; i < kword.length; i++) {
 
@@ -89,17 +89,44 @@
                     }
 
                     if(d.bill_id !== undefined) {
-                        bills.push({"official_title": d.official_title, "short_title": d.short_title,"popular_title":d.popular_title, "bill_id": d.bill_id, "result": result, "enacted": d.history.enacted, "vetoed": d.history.vetoed, "chamber": d.chamber, "last_vote": d.last_vote_at});
+                        bills.push({"official_title": d.official_title, "short_title": d.short_title,"popular_title":d.popular_title, "bill_id": d.bill_id, "result": result, "enacted": d.history.enacted, "vetoed": d.history.vetoed, "chamber": d.chamber, "last_vote": d.last_vote_at, "sponsor_party": d.sponsor.party});
                     }
                 });
 
-                allData.push({"keyword": kword[i], "details": bills});            
-            });
+                rawData.push({"keyword": kword[i], "details": bills}); 
 
+                vetoed = enacted = passed = failed = rSponsor = dSponsor = iSponsor = 0;
+
+                incoming = bills;
+
+                incoming.forEach(function(b) {
+
+                    if (b.vetoed === true) {
+                        vetoed += 1;
+                    } else if (b.enacted === true) {
+                        enacted += 1;
+                    } 
+
+                    if (b.result == "pass") {
+                        passed += 1;
+                    } else if (b.result == "fail") {
+                        failed += 1;
+                    } 
+
+                    if (b.sponsor_party == "R") {
+                        rSponsor += 1;
+                    } else if (b.sponsor_party == "D") {
+                        dSponsor += 1;
+                    } else if (b.sponsor_party == "I") {
+                        iSponsor += 1;
+                    }
+                });
+
+                aggData.push({"keyword": kword[i], "vetoed": vetoed, "enacted": enacted, "passed": passed, "failed": failed, "r_sponsor": rSponsor, "d_sponsor": dSponsor, "i_sponsor": iSponsor});
+                           
+            });
         })(i);
     }
-
-    
 
     var dataset = [
         {

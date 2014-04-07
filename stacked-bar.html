@@ -65,67 +65,86 @@
     var vetoed, enacted, passed, failed, dSponsor, rSponsor,iSponsor;
     var rawData = [];
     var aggData = [];
+    var voteData = [];
 
     for (var i = 0; i < kword.length; i++) {
 
-        (function(i) {
+      (function(i) {
 
-            d3.json(bills_url + kword[i], function(error, data) {
-                if(error) return console.warn(error);
+        d3.json(bills_url + kword[i], function(error, data) {
+          if(error) return console.warn(error);
 
-                incoming = data.results;
-                var bills = [];
+          incoming = data.results;
+          var bills = [];
 
-                incoming.forEach(function(d) { 
+          incoming.forEach(function(d) { 
 
-                    var actions = d.actions;
-                    var result = -1;
+            var actions = d.actions;
+            var result = -1;
 
-                    for(var j = 0; j < actions.length; j++) {
-                        if(actions[j].result !== undefined) {
-                            result = actions[j].result;
-                            break;
-                        }
-                    }
+            for(var j = 0; j < actions.length; j++) {
+                if(actions[j].result !== undefined) {
+                    result = actions[j].result;
+                    break;
+                }
+            }
 
-                    if(d.bill_id !== undefined) {
-                        bills.push({"official_title": d.official_title, "short_title": d.short_title,"popular_title":d.popular_title, "bill_id": d.bill_id, "result": result, "enacted": d.history.enacted, "vetoed": d.history.vetoed, "chamber": d.chamber, "last_vote": d.last_vote_at, "sponsor_party": d.sponsor.party});
-                    }
-                });
+            if(d.bill_id !== undefined) {
+                bills.push({
+                  "official_title": d.official_title, 
+                  "short_title": d.short_title,
+                  "popular_title":d.popular_title, 
+                  "bill_id": d.bill_id, 
+                  "result": result, 
+                  "enacted": d.history.enacted, 
+                  "vetoed": d.history.vetoed, 
+                  "chamber": d.chamber, 
+                  "last_vote": d.last_vote_at, 
+                  "sponsor_party": d.sponsor.party});
+            }
+          });
 
-                rawData.push({"keyword": kword[i], "details": bills}); 
+          rawData.push({"keyword": kword[i], "details": bills}); 
 
-                vetoed = enacted = passed = failed = rSponsor = dSponsor = iSponsor = 0;
+          vetoed = enacted = passed = failed = rSponsor = dSponsor = iSponsor = 0;
 
-                incoming = bills;
+          incoming = bills;
 
-                incoming.forEach(function(b) {
+          incoming.forEach(function(b) {
 
-                    if (b.vetoed === true) {
-                        vetoed += 1;
-                    } else if (b.enacted === true) {
-                        enacted += 1;
-                    } 
+            if (b.vetoed === true) {
+              vetoed += 1;
+            } else if (b.enacted === true) {
+              enacted += 1;
+            } 
 
-                    if (b.result == "pass") {
-                        passed += 1;
-                    } else if (b.result == "fail") {
-                        failed += 1;
-                    } 
+            if (b.result == "pass") {
+              passed += 1;
+            } else if (b.result == "fail") {
+              failed += 1;
+            } 
 
-                    if (b.sponsor_party == "R") {
-                        rSponsor += 1;
-                    } else if (b.sponsor_party == "D") {
-                        dSponsor += 1;
-                    } else if (b.sponsor_party == "I") {
-                        iSponsor += 1;
-                    }
-                });
+            if (b.sponsor_party == "R") {
+              rSponsor += 1;
+            } else if (b.sponsor_party == "D") {
+              dSponsor += 1;
+            } else if (b.sponsor_party == "I") {
+              iSponsor += 1;
+            }
+          });
 
-                aggData.push({"keyword": kword[i], "vetoed": vetoed, "enacted": enacted, "passed": passed, "failed": failed, "r_sponsor": rSponsor, "d_sponsor": dSponsor, "i_sponsor": iSponsor});
-                           
-            });
-        })(i);
+          aggData.push({
+            "keyword": kword[i], 
+            "vetoed": vetoed, 
+            "enacted": enacted, 
+            "passed": passed, 
+            "failed": failed, 
+            "r_sponsor": rSponsor, 
+            "d_sponsor": dSponsor, 
+            "i_sponsor": iSponsor});
+                       
+        });
+      })(i);
     }
 
     var dataset = [

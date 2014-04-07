@@ -68,38 +68,38 @@
 
     for (var i = 0; i < kword.length; i++) {
 
-        d3.json(bills_url + kword[0], function(error, data) {
-            if(error) return console.warn(error);
+        (function(i) {
 
-            incoming = data.results;
-            var bills = [];
+            d3.json(bills_url + kword[i], function(error, data) {
+                if(error) return console.warn(error);
 
-            incoming.forEach(function(d) { 
+                incoming = data.results;
+                var bills = [];
 
-                var actions = d.actions;
-                var result = -1;
+                incoming.forEach(function(d) { 
 
-                for(var j = 0; j < actions.length; j++) {
-                    if(actions[j].result !== undefined) {
-                        result = actions[j].result;
-                        break;
+                    var actions = d.actions;
+                    var result = -1;
+
+                    for(var j = 0; j < actions.length; j++) {
+                        if(actions[j].result !== undefined) {
+                            result = actions[j].result;
+                            break;
+                        }
                     }
-                }
 
-                if(d.bill_id !== undefined) {
-                    bills.push({"official_title": d.official_title, "short_title": d.short_title,"popular_title":d.popular_title, "bill_id": d.bill_id, "result": result, "enacted": d.history.enacted, "vetoed": d.history.vetoed, "chamber": d.chamber, "last_vote": d.last_vote_at});
-                }
+                    if(d.bill_id !== undefined) {
+                        bills.push({"official_title": d.official_title, "short_title": d.short_title,"popular_title":d.popular_title, "bill_id": d.bill_id, "result": result, "enacted": d.history.enacted, "vetoed": d.history.vetoed, "chamber": d.chamber, "last_vote": d.last_vote_at});
+                    }
+                });
+
+                allData.push({"keyword": kword[i], "details": bills});            
             });
-            console.log(i);
-            console.log(kword[i]);
-            allData.push({"keyword": kword[i], "details": bills});
-            
-        });
 
+        })(i);
     }
 
-    console.log("allData",i);
-    console.log(allData);
+    
 
     var dataset = [
         {

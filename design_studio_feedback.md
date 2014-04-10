@@ -10,7 +10,7 @@ Design Studio 3 - Peer Feedback
 
 Feedback received from: Mychal Ceruti (mceruti@g.harvard.edu)
 
-<b>A Brief Summary about our Project:</b>
+<b>A Brief Summary about our Project:</b><br>
 In our Final Project, we are attempting to implement a visualization that will make understanding
 and learning about Congressional Bills easier. Information regarding said bills is available
 online but there isn't any analytic visualization that shows which House contributed to what bill.
@@ -34,6 +34,6 @@ Through these three visualizations, users will be able to understand in more dep
 Congressional Bills.
 
 
-<b>Feedback:</b>
+<b>Feedback:</b><br>
 During our discussions about my groups Final Project, Mychal made some very useful comments.
 One of the most critical remark made regarded making our 

@@ -2,8 +2,8 @@ Partners: Yash Patel, Freddy Vallenilla, Allie Ai <br>
 Email: yashpatel@fas.harvard.edu, fvallenilladorta@g.harvard.edu, allie_ai@gse.harvard.edu <br>
 File: Design Studio 3 - Final Project
 
-A Look into Successful Congressional Bills
-==========================================
+A Look into Successful Federal Legislation Bills
+================================================
 
 Design Studio 3 - Peer Feedback
 -------------------------------
@@ -12,7 +12,7 @@ Feedback received from: Mychal Ceruti (mceruti@g.harvard.edu)
 
 <b>A Brief Summary about our Project:</b><br>
 In our Final Project, we are attempting to implement a visualization that will make understanding
-and learning about Congressional Bills easier. Information regarding said bills is available
+and learning about Federal Legislation Bills easier. Information regarding said bills is available
 online but there isn't any analytic visualization that shows which House contributed to what bill.
 Hence, in our visualization, we are establishing three views to display such information. 
 
@@ -32,7 +32,7 @@ more detailed view of the clicked bill. It will present information about the bi
 does.
 
 Through these three visualizations, users will be able to understand in more depth about the passed
-Congressional Bills.
+Federal Legislation Bills.
 
 
 <b>Feedback:</b><br>

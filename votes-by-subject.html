@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Votes by Subject</title>
+</head>
+
+
+<body>
+<script src="libs/d3.v3.min.js"></script>
+<style type="text/css">
+    svg-old{
+        background: #F0F0F5; /*light brown*/
+    }
+    
+  .tooltip {
+    opacity: 0.2;
+  }
+
+  .tooltip:hover {
+    opacity: 1;
+  }
+  
+  .link {
+    stroke: #F0F0F5;
+    stroke-width: 1.5px;
+   }
+
+    path.country{
+        fill: #99CCFF; /*light blue*/
+    }
+
+    path.country.active {
+        fill: #D1A319; /*gold*/
+    }
+
+    text,
+    .tooltip {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 9pt;
+    }
+
+    .axis text {
+        font: 10px sans-serif;
+        fill: #C0C0C0;
+    }
+
+    .axis line,
+    .axis path {
+        fill: none;
+        stroke: #C0C0C0;
+        shape-rendering: crispEdges;
+    }
+
+    .station{
+        fill:lightgrey;
+        opacity: .7;
+    }
+
+    .station.hasData{
+        fill:blue;
+        opacity: 1;
+    }
+    
+    .hourLine{
+        fill:none;
+        stroke:steelblue;
+
+    }
+    .brush .extent{
+        fill:gray;
+        opacity: .3;
+    }
+
+    #state-borders {
+      fill: none;
+      stroke: #FFFFFF;
+      stroke-width: 1.5px;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+      pointer-events: none;
+    }
+
+    div.tooltip {
+      color: #0066CC; 
+      background: #FFFFFF; 
+      padding: .5em; 
+      opacity: 0.8; 
+      position: absolute;
+    }
+
+    .hidden { 
+      display: none; 
+    }
+
+    rect {
+        fill: #0066CC;
+    }
+</style>
+
+
+
+<table>
+    <tr><td><div id="vis"></div></td><td><div id="detailVis"></div></td></tr>
+</table>
+
+
+<script src="votes-by-subject.js"></script>
+
+</body>
+</html>

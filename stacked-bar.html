@@ -30,9 +30,9 @@
 
     <script>
         
-    var margin = {top: 20, right: 20, bottom: 30, left: 100},
+    var margin = {top: 120, right: 20, bottom: 30, left: 200},
     width = 760 - margin.left - margin.right,
-    height = 300 - margin.top - margin.bottom,
+    height = 800 - margin.top - margin.bottom,
 
     legendPanel = {
             width: 240
@@ -40,9 +40,9 @@
 
     groups = {
       SD: "Senate Democrat",
-      HD: "House Democrat",
+      HD: "Democrat",
       SR: "Senate Republican",
-      HR: "House Republican"
+      HR: "Republican"
     },
 
     colors = {
@@ -60,7 +60,7 @@
 
     bills_url = 'http://congress.api.sunlightfoundation.com/bills?actions.type=vote&fields=sponsor.party,chamber,actions,official_title,short_title,popular_title,bill_id,history.vetoed,history.enacted,last_vote_at&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=';
 
-    kword = ["Agriculture and food", "Animals", "Armed forces and national security", "Arts, culture, religion", "Civil rights and liberties, minority issues", "Commerce", "Congress", "Crime and law enforcement", "Economics and public finance", "Education", "Emergency management", "Energy", "Environmental protection", "Families", "Finance and financial sector", "Foreign trade and international finance", "Government operations and politics", "Health, Housing and community development", "Immigration", "International affairs", "Labor and employment", "Law", "Native Americans", "Private legislation", "Public lands and natural resources", "Science, technology, communications", "Social sciences and history", "Social security and elderly assistance", "Social welfare", "Taxation", "Transportation and public works, Water resources development"];
+    kword = ["Agriculture and food", "Animals", "Armed forces and national security", "Arts, culture, religion", "Civil rights and liberties, minority issues", "Commerce", "Congress", "Crime and law enforcement", "Economics and public finance", "Education", "Emergency management", "Energy", "Environmental protection", "Families", "Finance and financial sector", "Foreign trade and international finance", "Government operations and politics", "Immigration", "International affairs", "Labor and employment", "Law", "Native Americans", "Private legislation", "Public lands and natural resources", "Science, technology, communications", "Social sciences and history", "Social security and elderly assistance", "Social welfare", "Taxation"];
 
     var vetoed, enacted, passed, failed, dSponsor, rSponsor,iSponsor;
     var rawData = [];
@@ -153,40 +153,57 @@
               
           if(aggData.length == kword.length) {
             
-            var dataset = [
-                {
-                    data: [
-                        { keyword: 'Medicare', vote: 3 },
-                        { keyword: 'Water', vote: 13 },
-                        { keyword: 'Social Security', vote: 15 }
-                    ],
-                    name: groups.SD
-                },
-                {
-                    data: [
-                        { keyword: 'Medicare', vote: 12 },
-                        { keyword: 'Water', vote: 13 },
-                        { keyword: 'Social Security', vote: 5 }
-                    ],
-                    name: groups.HD
-                },
-                {
-                    data: [
-                        { keyword: 'Medicare', vote: 3 },
-                        { keyword: 'Water', vote: 4 },
-                        { keyword: 'Social Security', vote: 1 }
-                    ],
-                    name: groups.SR
-                },
-                {
-                    data: [
-                        { keyword: 'Medicare', vote: 3 },
-                        { keyword: 'Water', vote: 4 },
-                        { keyword: 'Social Security', vote: 5 }
-                    ],
-                    name: groups.HR
-                }
-            ],
+            var rset = [];
+            var dset = [];
+            var dataset = [];
+
+            aggData.forEach(function(kw) {
+
+              rset.push({"keyword": kw.keyword, "vote": kw.r_sponsor});
+              dset.push({"keyword": kw.keyword, "vote": kw.d_sponsor});
+
+            });
+          
+            dataset.push({"data":rset, "name": groups.HR});
+            dataset.push({"data":dset, "name": groups.HD});
+
+            console.log(dataset);
+
+            // var dataset = [
+            //     {
+            //         data: [
+            //             { keyword: 'Medicare', vote: 3 },
+            //             { keyword: 'Water', vote: 13 },
+            //             { keyword: 'Social Security', vote: 15 }
+            //         ],
+            //         name: groups.SD
+            //     },
+            //     {
+            //         data: [
+            //             { keyword: 'Medicare', vote: 12 },
+            //             { keyword: 'Water', vote: 13 },
+            //             { keyword: 'Social Security', vote: 5 }
+            //         ],
+            //         name: groups.HD
+            //     },
+            //     {
+            //         data: [
+            //             { keyword: 'Medicare', vote: 3 },
+            //             { keyword: 'Water', vote: 4 },
+            //             { keyword: 'Social Security', vote: 1 }
+            //         ],
+            //         name: groups.SR
+            //     },
+            //     {
+            //         data: [
+            //             { keyword: 'Medicare', vote: 3 },
+            //             { keyword: 'Water', vote: 4 },
+            //             { keyword: 'Social Security', vote: 5 }
+            //         ],
+            //         name: groups.HR
+            //     }
+            // ];
+
             series = dataset.map(function(d) { return d.name; });
 
             dataset = dataset.map(function(d) {
@@ -203,7 +220,7 @@
 
             // console.log(dataset);
 
-            var dataset = dataset.map(function(group) {
+            dataset = dataset.map(function(group) {
                 return group.map(function(d) {
                     // horizontal bars, invert the x and y values, and y0 becomes x0
                     return {
@@ -310,7 +327,7 @@
                        
         });
 
-      })(i);
+      }) (i);
     }
 
 

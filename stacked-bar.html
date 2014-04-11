@@ -27,17 +27,38 @@
         </style>
     </head>
     <body>
+
+      <span>Display as:</span>
+
     <script src="libs/d3.v3.min.js"></script>
 
     <script>
         
-    var margin = {top: 120, right: 20, bottom: 30, left: 190},
+    var margin = {top: 50, right: 20, bottom: 30, left: 190},
     width = 760 - margin.left - margin.right,
     height = 800 - margin.top - margin.bottom,
 
     legendPanel = {
             width: 240
-    },    
+    };   
+
+    d3.select("body").append("button").text("Bar").on({
+        "click": function() {
+            updateData();
+        }
+    });
+
+    d3.select("body").append("button").text("Force").on({
+        "click": function() {
+            changeScale();
+        }
+    });  
+
+        d3.select("body").append("button").text("Word Cloud").on({
+        "click": function() {
+            changeScale();
+        }
+    });     
 
     groups = {
       SD: "Senate Democrat",
@@ -293,6 +314,13 @@
               //.attr("dy", ".15em")
               .style("text-anchor", "start")
               .text(function(d) { return d; });
+
+          groups.append("text")
+            .attr("x", width/6)
+            .attr("y", -10)
+            .text("A Look into Successful Federal Legislation")
+            .style("font-size", "20px")
+            .style("fill", "#686868");
             
           }
                        

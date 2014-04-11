@@ -44,19 +44,19 @@
 
     d3.select("body").append("button").text("Bar").on({
         "click": function() {
-            updateData();
+            barView();
         }
     });
 
     d3.select("body").append("button").text("Force").on({
         "click": function() {
-            changeScale();
+            forceView();
         }
     });  
 
         d3.select("body").append("button").text("Word Cloud").on({
         "click": function() {
-            changeScale();
+            wordView();
         }
     });     
 

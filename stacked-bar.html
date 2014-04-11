@@ -52,9 +52,13 @@
       HR: "#CC0000"
     },
 
+    // color = d3.scale.ordinal()
+    //     .domain([groups.SD, groups.HD, groups.SR, groups.HR])
+    //     .range([colors.SD, colors.HD, colors.SR, colors.HR]);
+
     color = d3.scale.ordinal()
-        .domain([groups.SD, groups.HD, groups.SR, groups.HR])
-        .range([colors.SD, colors.HD, colors.SR, colors.HR]);
+        .domain([groups.HD, groups.HR])
+        .range([colors.HD, colors.HR]);
 
     breakdown_url = 'http://congress.api.sunlightfoundation.com/votes?vote_type=passage&result=Passed&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&query=';
 
@@ -167,43 +171,6 @@
             dataset.push({"data":rset, "name": groups.HR});
             dataset.push({"data":dset, "name": groups.HD});
 
-            console.log(dataset);
-
-            // var dataset = [
-            //     {
-            //         data: [
-            //             { keyword: 'Medicare', vote: 3 },
-            //             { keyword: 'Water', vote: 13 },
-            //             { keyword: 'Social Security', vote: 15 }
-            //         ],
-            //         name: groups.SD
-            //     },
-            //     {
-            //         data: [
-            //             { keyword: 'Medicare', vote: 12 },
-            //             { keyword: 'Water', vote: 13 },
-            //             { keyword: 'Social Security', vote: 5 }
-            //         ],
-            //         name: groups.HD
-            //     },
-            //     {
-            //         data: [
-            //             { keyword: 'Medicare', vote: 3 },
-            //             { keyword: 'Water', vote: 4 },
-            //             { keyword: 'Social Security', vote: 1 }
-            //         ],
-            //         name: groups.SR
-            //     },
-            //     {
-            //         data: [
-            //             { keyword: 'Medicare', vote: 3 },
-            //             { keyword: 'Water', vote: 4 },
-            //             { keyword: 'Social Security', vote: 5 }
-            //         ],
-            //         name: groups.HR
-            //     }
-            // ];
-
             series = dataset.map(function(d) { return d.name; });
 
             dataset = dataset.map(function(d) {
@@ -214,6 +181,7 @@
                     };
                 });
             });
+
             //use stack layout 
             stack = d3.layout.stack();
             stack(dataset);
@@ -319,7 +287,7 @@
           legend.append("text")
               .attr("x", width + 35)
               .attr("y", 10)
-        //      .attr("dy", ".15em")
+              //.attr("dy", ".15em")
               .style("text-anchor", "start")
               .text(function(d) { return d; });
             

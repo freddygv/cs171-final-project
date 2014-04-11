@@ -63,7 +63,7 @@
 
     breakdown_url = 'http://congress.api.sunlightfoundation.com/votes?vote_type=passage&result=Passed&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&query=';
 
-    bills_url = 'http://congress.api.sunlightfoundation.com/bills?actions.type=vote&fields=sponsor.party,chamber,actions,official_title,short_title,popular_title,bill_id,history.vetoed,history.enacted,last_vote_at&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=';
+    bills_url = 'http://congress.api.sunlightfoundation.com/bills?actions.result=pass&actions.type=vote&fields=sponsor.party,chamber,actions,official_title,short_title,popular_title,bill_id,history.vetoed,history.enacted,last_vote_at&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=';
 
     kword = ["Agriculture and food", "Animals", "Armed forces and national security", "Arts, culture, religion", "Civil rights and liberties, minority issues", "Commerce", "Congress", "Crime and law enforcement", "Economics and public finance", "Education", "Emergency management", "Energy", "Environmental protection", "Families", "Finance and financial sector", "Foreign trade and international finance", "Government operations and politics", "Immigration", "International affairs", "Labor and employment", "Law", "Native Americans", "Private legislation", "Public lands and natural resources", "Science, technology, communications", "Social sciences and history", "Social security and elderly assistance", "Social welfare", "Taxation"];
 
@@ -260,9 +260,8 @@
                 .attr("x", width - 15)
                 .attr("y", -20)
                 .attr("dy", "1.7em")
-                .style("color", "black")
                 .style("text-anchor", "end")
-                .text("Number of Votes");
+                .text("Number of bills passed, by party");
 
             svg.append('g')
                 .attr('class', 'y axis')

@@ -325,7 +325,11 @@ var link = svg.selectAll(".link")
 var node = svg.selectAll(".node")
               .data(graph.nodes)
               .enter()
-              .append("g").attr("class", "node");
+              .append("g").attr("class", "node")
+              .on("click", function(d){
+                console.log("clicked!");
+                createDetailVis(d);
+              });
 
 node.append("circle")
     .attr("r", 5)
@@ -380,150 +384,34 @@ function loadVotes() {
   graph.nodes = dataSet;
 }
 
-function loadStations() {
-    d3.csv("../data/NSRDB_StationsMeta.csv",function(error,data){
-      var coords = [];
-        svg.selectAll("circle")
-           .data(data)
-           .enter()
-           .append("circle")
-           .attr("id", function(d){return d.USAF})
-           .attr("cx", function(d) {
-                  coords = projection([d.NSRDB_LON, d.NSRDB_LAT]);
-                  return (coords)? coords[0]:"-100"; //for stations without coords, put them outside the map; there seems to be 11 of them in .csv file
-           })
-           .attr("cy", function(d) {
-                  coords = projection([d.NSRDB_LON, d.NSRDB_LAT]);
-                  return (coords)? coords[1]:"-100"; //for stations without coords, put them outside the map; there seems to be 11 of them in .csv file
-           })
-           .attr("r", function(d){ 
-              if(dataSet[d.USAF]) return stationScale(dataSet[d.USAF].sum); 
-              else return 2 //set stations with no data with r=2
-           })
-           .attr("class", "station")
-           .style("fill", function(d){ 
-              if(dataSet[d.USAF]) return "#0066CC"; 
-              else return "#C0C0C0" //set stations with no data as grey dots #C0C0C0
-           })
-           .on("mouseover", function(d,i) {
-            var mouse = d3.mouse(svg.node()).map( function(d) { return parseInt(d); } );
-
-            tooltip
-              .classed("hidden", false)
-              .attr("style", "left:" + (mouse[0]+10) + "px; top:" + (mouse[1]+7) +"px")
-              .html(d.STATION + ", " + d.ST + "<br/>Sum : " + dataSet[d.USAF].sum)
-          })
-          .on("mouseout",  function(d,i) {
-            tooltip.classed("hidden", true)
-          })
-          .on("click", function(d){
-            createDetailVis(d);
-          });
-    });
-}
-
-
-function loadStats() {
-    d3.json("../data/reducedMonthStationHour2003_2004.json", function(error,data){
-        dataSet = data;
-
-        //set station size scale domain 
-        var max = d3.entries(data)
-            .sort(function(a, b) { return b.value.sum - a.value.sum; })
-            [0].value.sum;
-
-        stationScale.domain([0, max]);
-                
-        loadStations();
-    })
-}
-
-//Main
-/*
-d3.json("../data/us-named.json", function(error, data) {
-
-    var usMap = topojson.feature(data,data.objects.states).features;
-
-    svg.append("g").attr("id", "countries");
-
-    svg.selectAll("path").data(usMap) 
-    .enter()
-    .append("path")
-    .attr("d", path)
-    .attr("class", "country")
-    .on("click", zoomToBB);
-
-    svg.append("path")
-      .datum(topojson.mesh(data, data.objects.states, function(a, b) { return a !== b; }))
-      .attr("id", "state-borders")
-      .attr("d", path);
-
-    tooltip = d3.select("#vis").append("div")
-    .attr("class", "tooltip");
-
-    loadStats();
-});
-*/
-
 var createDetailVis = function(data){
-
-  var stationHourlyData =  dataSet[data.USAF].hourly; 
+  var voteDetail = "Vote question: <br/>" + data.question + "<br/><br/>" 
+                + "Vote ID: <br/>" + data.bill_id + "<br/><br/>"
+                + "Voted Year: <br/>" + data.year + "<br/><br/>"
+                + "Result: <br/>" + data.result + "<br/><br/>"
+                + "Source: <br/>" + data.source;
 
   // clean the previous graph first
-  detailVis.select("g.chart").remove();
-
-  // create a new graph
-  var x = d3.scale.ordinal()
-      .rangeRoundBands([0, detailVisWidth - margin.left - margin.right], .1);
-
-  var y = d3.scale.linear()
-      .range([detailVisHeight - margin.top - margin.bottom, 0]);
-
-  var timeVals = Object.getOwnPropertyNames(hours).map(function(key) {
-      return parseHour(hours[key]);
-  });
-  x.domain(timeVals);
-
-  var yMax = d3.entries(stationHourlyData)
-            .sort(function(a, b) { return b.value - a.value; })
-            [0].value;
-  y.domain([0, yMax]);
-
-  var xAxis = d3.svg.axis()
-      .scale(x)
-      .orient("bottom")
-      .tickFormat(d3.time.format("%I:%M:%S %p"));
-
-  var yAxis = d3.svg.axis()
-      .scale(y)
-      .orient("right");
+  detailVis.select("g.note").remove();
 
   var svgDetail = detailVis.append("g")
-    .attr("class", "chart")
+    .attr("class", "note")
     .attr('transform', 'translate(' + (margin.left - 30) + ', ' + (margin.top - 30) + ')');
 
-  svgDetail.append("g")
-      .attr("class", "x axis")
-      .attr('transform', 'translate(0, ' + (detailVisHeight - margin.top - margin.bottom) + ')')
-      .call(xAxis)
-      .selectAll("text")
-      .style("text-anchor", "end")
-      .attr("dx", "-.8em")
-      .attr("dy", "-.55em")
-      .attr("transform", "rotate(-75)");
+  var rect = svgDetail.append('rect')
+                        .attr('width', 350)
+                        .attr('height', 500)
+                        .attr('x', 0)
+                        .attr('y', 0)
+                        .style('fill', '#F0F0F5')
 
-  svgDetail.append("g")
-      .attr("class", "y axis")
-      .attr('transform', 'translate(' + (detailVisWidth - margin.left - margin.right) + ', 0)') //move yaxis to the right
-      .call(yAxis);
-
-  svgDetail.selectAll("rect")
-      .data(d3.entries(stationHourlyData))
-      .enter().append("rect")
-      .attr("x", function(d) { return x(parseHour(d.key)); })
-      .attr("width", x.rangeBand())
-      .attr("y", function(d) { return y(d.value); })
-      .attr("height", function(d) { return detailVisHeight - margin.top - margin.bottom - y(d.value); });
+        text = svgDetail.append('foreignObject')
+                        .attr('x', 0)
+                        .attr('y', 0)
+                        .attr('width', 330)
+                        .attr('height', 500)
+                        .append("xhtml:body")
+                        .html(voteDetail);
 }
 
 

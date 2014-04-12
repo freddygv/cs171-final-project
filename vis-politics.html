@@ -195,27 +195,27 @@ detailVisHeight = 350,
 detailVis = d3.select("#detail-vis").append("svg").attr({
     width:detailVisWidth,
     height:detailVisHeight
-}),
-
-groups = {
-  //SD: "Senate Democrat",
-  HD: "Democrat",
-  //SR: "Senate Republican",
-  HR: "Republican"
-},
-
-colors = {
-  //SD: "#4D94DB",
-  HD: "#0066CC",
-  //SR: "#E06666",
-  HR: "#CC0000"
-},
-
-color = d3.scale.ordinal()
-    .domain([groups.HD, groups.HR])
-    .range([colors.HD, colors.HR]);
+});
 
 var barView = function() {
+
+    var groups = {
+      //SD: "Senate Democrat",
+      HD: "Democrat",
+      //SR: "Senate Republican",
+      HR: "Republican"
+    },
+
+    colors = {
+      //SD: "#4D94DB",
+      HD: "#0066CC",
+      //SR: "#E06666",
+      HR: "#CC0000"
+    },
+
+    color = d3.scale.ordinal()
+        .domain([groups.HD, groups.HR])
+        .range([colors.HD, colors.HR]);
 
     var legendPanel = {
             width: 240
@@ -535,6 +535,24 @@ function drawWords(words) {
 
 var forceView = function() {
 
+  var groups = {
+    //SD: "Senate Democrat",
+    HD: "Democrat",
+    //SR: "Senate Republican",
+    HR: "Republican"
+  },
+
+  colors = {
+    //SD: "#4D94DB",
+    HD: "#0066CC",
+    //SR: "#E06666",
+    HR: "#CC0000"
+  },
+
+  color = d3.scale.ordinal()
+      .domain([groups.HD, groups.HR])
+      .range([colors.HD, colors.HR]);
+
   d3.json("data-test/votes-medicare-test.json", function(data) {
     var graph = {nodes:[], links:[]};
     var subjectNode = {
@@ -567,19 +585,15 @@ var forceView = function() {
         .charge(-50)
         .linkDistance(100)
         .on("tick", function(d){
-          link.transition().duration(0)
-          .attr("x1", function(d) { return d.target.x; })
-          .attr("y1", function(d) { return d.target.y; })
-          .attr("x2", function(d) { return d.source.x; })
-          .attr("y2", function(d) { return d.source.y; });
+          link.attr("x1", function(d) { return d.target.x; })
+            .attr("y1", function(d) { return d.target.y; })
+            .attr("x2", function(d) { return d.source.x; })
+            .attr("y2", function(d) { return d.source.y; });
 
-          node.transition().duration(0)
-            .attr("transform", function(d) { 
+          node.attr("transform", function(d) { 
             return "translate("+d.x+","+d.y+")"; 
           });
-        })
-        .on("start", function(d) {})
-        .on("end", function(d) {})
+        });
 
     var link = svg.selectAll(".link")
                   .data(graph.links)
@@ -588,8 +602,7 @@ var forceView = function() {
 
     var node = svg.selectAll(".node")
                   .data(graph.nodes)
-                  .enter()
-                  .append("g").attr("class", "node")
+                  .enter().append("g").attr("class", "node")
                   .on("click", function(d){
                     createDetailVis(d);
                   });

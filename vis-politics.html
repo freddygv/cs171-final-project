@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Access-Control-Allow-Origin" content="*">
@@ -6,7 +6,6 @@
         <style>
         body {
           font: 12px Arial, Helvetica, sans-serif;
-          shape-rendering: crispedges;
         }
         #control-menu {
           margin: 20px;
@@ -52,21 +51,14 @@
             background: #999966;
         }
 
-        .axis path,
-        .axis line {
-            stroke: lightgrey;
-            fill: none;
+        text,
+        .tooltip,
+        .note {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 9px;
         }
-        .grid .x.axis line {
-            stroke: lightgrey;
-        }
-        .axis text,
-        .legend {
-            stroke: #E0E0EB;
-            stroke-width: .3px;
-        }        
     
-          .tooltip {
+        .tooltip {
           opacity: 0.2;
         }
 
@@ -79,29 +71,33 @@
           stroke-width: 1.5px;
          }
 
-          text,
-          .tooltip,
-          .note {
-              font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-              font-size: 9pt;
-          }
+        .axis line,
+        .axis path {
+            fill: none;
+            stroke: #C0C0C0;
+            shape-rendering: crispEdges;
+        }
 
-          .axis text {
-              font: 12px sans-serif;
-              fill: gray;
-          }
+        .axis path,
+        .axis line {
+            stroke: lightgrey;
+            fill: none;
+        }
+        .grid .x.axis line {
+            stroke: lightgrey;
+        }
 
-          .axis line,
-          .axis path {
-              fill: none;
-              stroke: #C0C0C0;
-              shape-rendering: crispEdges;
-          }
+        .axis text,
+        .legend {
+            stroke: #E0E0EB;
+            stroke-width: .3px;
+        }        
 
-          .hidden { 
-            display: none; 
-          }
-        </style>
+        .axis text {
+            font: 12px sans-serif;
+            fill: gray;
+        }
+    </style>
 
     <script src="libs/d3.v3.min.js"></script>
     <script src="libs/d3.layout.cloud.js"></script>
@@ -118,7 +114,7 @@
                 <div id="medicare"></div>
                 </div>
             </td>
-            <td><div id="detailvis"></div></td>
+            <td><div id="detail-vis"></div></td>
         </tr>
     </table>
     
@@ -133,11 +129,11 @@
             d3.select("#control-menu button.btn-blue").attr("class", "btn-blue");
             d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
             //hide other views
-            if(d3.select("svg#wordview")) {d3.select("svg#wordview").remove()}
-            if(d3.select("svg#forceview")) {d3.select("svg#forceview").remove()}
-            if(d3.select("#detailvis")) {d3.select("#detailvis").style("display","none")}
+            if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
+            if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
+            if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
 
-            if(d3.select("#barview")) {d3.select("#barview").remove()} 
+            if(d3.select("#bar-view")) {d3.select("#bar-view").remove()} 
 
             barView();
         });
@@ -153,13 +149,13 @@
             d3.select("#control-menu button.btn-red").attr("class", "btn-red");
             d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
             //delete other views
-            if(d3.select("svg#barview")) {d3.select("svg#barview").remove()}
-            if(d3.select("svg#wordview")) {d3.select("svg#wordview").remove()}
+            if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
+            if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
 
             //make detail vis area visible 
-            if(d3.select("#detailvis")) {d3.select("#detailvis").style("display","block")}
+            if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","block")}
 
-            if(d3.select("#forceview")) {d3.select("#forceview").remove()} 
+            if(d3.select("#force-view")) {d3.select("#force-view").remove()} 
 
             forceView();
         }
@@ -175,11 +171,11 @@
             d3.select("#control-menu button.btn-red").attr("class", "btn-red");
             d3.select("#control-menu button.btn-blue").attr("class", "btn-blue");
             //hide other views
-            if(d3.select("svg#barview")) {d3.select("svg#barview").remove()}
-            if(d3.select("svg#forceview")) {d3.select("svg#forceview").remove()}
-            if(d3.select("#detailvis")) {d3.select("#detailvis").style("display","none")}
+            if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
+            if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
+            if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
 
-            if(d3.select("#wordview")) {d3.select("#wordview").remove()}  
+            if(d3.select("#word-view")) {d3.select("#word-view").remove()}  
 
             wordView();
         }
@@ -194,18 +190,9 @@ var margin = {
 width = 760 - margin.left - margin.right,
 height = 800 - margin.top - margin.bottom,
 detailVisWidth = 350,
-detailVisHeight = 350;
+detailVisHeight = 350,
 
-var centered; 
-
-var bbVis = {
-    x: 100,
-    y: 10,
-    w: width - 100,
-    h: 300
-},
-
-detailVis = d3.select("#detailvis").append("svg").attr({
+detailVis = d3.select("#detail-vis").append("svg").attr({
     width:detailVisWidth,
     height:detailVisHeight
 }),
@@ -378,7 +365,7 @@ var barView = function() {
 
             var svg = d3.select('body')
                 .append('svg')
-                    .attr("id", "barview")
+                    .attr("id", "bar-view")
                     .attr('width', width + margin.left + margin.right + legendPanel.width)
                     .attr('height', height + margin.top + margin.bottom)
                 .append('g')
@@ -496,42 +483,39 @@ var wordView = function() {
 
     words = countWords(wordsStr); 
 
-    //console.log(words.slice(0,10))
-
     d3.layout.cloud().size([300, 300])
-      .words(words.slice(0,10))
+      .words(words)
       .rotate(0)
-      .font("arial")
       .fontSize(function(d) { return d.size * 8; })
       .on("end", drawWords)
       .start();
 
   });
 
-  function countWords (d) {
-    var wordsStr = d; 
-    var ignore = ['and','the','to','a','of','for','as','i','with','it','is','on','that','this','can','in','be','has','if', '--', 'act', 'or', 'table', 'other', 'res', 'passage', 'bill', 'amend', 'agreeing', 'any', 'by', 'motion', 'law', 'use', 'amdt', 'xviii', 'improve', 'instructions','consideration', 'sgr', 'question','recommit','agreement','observe','repeal','conditioning','resolution','ordering','title','houseon','executive','nomination','right','rights','execution','secretaries', 'needs','rate','congressional','states', 'pn', 'enactments', 'previous', 'block', 'provider', 'providing','amendment','purposeson'];
- 
-    wordsArray = wordsStr.toLowerCase().replace(/[^a-z\-]/g," ").split(" "); //remove non characters, split by empty space 
-    counts={}
-    for( i in wordsArray) {
-      if(wordsArray[i].length > 1 && $.inArray(wordsArray[i], ignore) < 0) 
-        counts[wordsArray[i]] ? counts[wordsArray[i]]+=1 : counts[wordsArray[i]]=1;
-    }
-    var words = [];
-    for (var i in counts) { words.push({"text": i, "size": counts[i]})}
-    words.sort(function(a, b) {return b.size - a.size})
-    //console.log(words)
-    return words;
-  }
-
 } //end wordView
+
+function countWords (d) {
+  var wordsStr = d; 
+  var ignore = ['and','the','to','a','of','for','as','i','with','it','is','on','that','this','can','in','be','has','if', '--', 'act', 'or', 'table', 'other', 'res', 'passage', 'bill', 'amend', 'agreeing', 'any', 'by', 'motion', 'law', 'use', 'amdt', 'xviii', 'improve', 'instructions','consideration', 'sgr', 'question','recommit','agreement','observe','repeal','conditioning','resolution','ordering','title','houseon','executive','nomination','right','rights','execution','secretaries', 'needs','rate','congressional','states', 'pn', 'enactments', 'previous', 'block', 'provider', 'providing','amendment','purposeson'];
+
+  wordsArray = wordsStr.toLowerCase().replace(/[^a-z\-]/g," ").split(" "); //remove non characters, split by empty space 
+  counts={}
+  for( i in wordsArray) {
+    if(wordsArray[i].length > 1 && $.inArray(wordsArray[i], ignore) < 0) 
+      counts[wordsArray[i]] ? counts[wordsArray[i]]+=1 : counts[wordsArray[i]]=1;
+  }
+  var words = [];
+  for (var i in counts) { words.push({"text": i, "size": counts[i]})}
+  words.sort(function(a, b) {return b.size - a.size})
+  //console.log(words)
+  return words;
+}
 
 function drawWords(words) {
   var fill = d3.scale.category20();
 
   d3.select("body").append("svg")
-      .attr("id", "wordview")
+      .attr("id", "word-view")
       .attr("width", 300)
       .attr("height", 300)
     .append("g")
@@ -568,7 +552,7 @@ var forceView = function() {
     //console.log(graph.links);
 
     var canvas = d3.select("#vis #medicare").append("svg")
-        .attr("id", "forceview")
+        .attr("id", "force-view")
         .attr({
           width: width + margin.left + margin.right,
           height: height + margin.top + margin.bottom

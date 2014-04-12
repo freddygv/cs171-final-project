@@ -251,7 +251,7 @@ var margin = {
 };
 
 var width = 560 - margin.left - margin.right;
-var height = 400 - margin.bottom - margin.top;
+var height = 500 - margin.bottom - margin.top;
 var centered; 
 var detailVisWidth = 350;
 var detailVisHeight = 350;
@@ -268,12 +268,14 @@ var detailVis = d3.select("#detailVis").append("svg").attr({
     height:detailVisHeight
 });
 
-var canvas = d3.select("#vis").append("svg").attr({
+var canvas = d3.select("#vis #medicare").append("svg")
+    .attr({
     width: width + margin.left + margin.right,
     height: height + margin.top + margin.bottom
     });
 
-var svg = canvas.append("g").attr({
+
+    svg = canvas.append("g").attr({
         transform: "translate(" + margin.left + "," + margin.top + ")"
     }),
 
@@ -327,7 +329,6 @@ var node = svg.selectAll(".node")
               .enter()
               .append("g").attr("class", "node")
               .on("click", function(d){
-                console.log("clicked!");
                 createDetailVis(d);
               });
 

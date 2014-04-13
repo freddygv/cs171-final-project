@@ -112,6 +112,7 @@
     </head>
     <body>
 
+      <!--placeholders for visual elements-->
       <div id="control-menu">A Look into Successful Federal Legislation in </div>
 
       <table>
@@ -122,8 +123,9 @@
     </table>
     
     <script>
+    <!--control panel-->
     d3.select("body div#control-menu").append("button")
-      .text("Numbers") //stacked bar chart
+      .text("Numbers") //stacked bar chart by keywords
       .attr("class", "btn-red")
       .on("click", function() {
             d3.select(this)
@@ -131,41 +133,37 @@
             //deselect other buttons
             d3.select("#control-menu button.btn-blue").attr("class", "btn-blue");
             d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
-            //hide other views
+            //delete/hide other views
             if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
             if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
             if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
-
             if(d3.select("#bar-view")) {d3.select("#bar-view").remove()} 
 
             barView();
         });
 
     d3.select("body div#control-menu").append("button")
-      .text("Details")
+      .text("Details") //force layout view to display individual bills grouped by keywords
       .attr("class", "btn-blue")
       .on({
         "click": function() {
             d3.select(this).attr("class", "btn-blue active"); 
-
             //deselect other buttons
             d3.select("#control-menu button.btn-red").attr("class", "btn-red");
             d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
             //delete other views
             if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
             if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
-
+            if(d3.select("#force-view")) {d3.select("#force-view").remove()} 
             //make detail vis area visible 
             if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","block")}
-
-            if(d3.select("#force-view")) {d3.select("#force-view").remove()} 
 
             forceView();
         }
     });  
 
     d3.select("body div#control-menu").append("button")
-      .text("Topics")
+      .text("Topics") //show keywords contained in bill titles
       .attr("class", "btn-blend")
       .on({
         "click": function() {
@@ -173,16 +171,16 @@
             //deselect other buttons
             d3.select("#control-menu button.btn-red").attr("class", "btn-red");
             d3.select("#control-menu button.btn-blue").attr("class", "btn-blue");
-            //hide other views
+            //delete/hide other views
             if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
             if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
             if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
-
             if(d3.select("#word-view")) {d3.select("#word-view").remove()}  
 
             wordView();
         }
     });   
+    <!--end control panel-->  
 
 var margin = {
     top: 50,
@@ -218,6 +216,9 @@ color = d3.scale.ordinal()
     .domain([groups.HD, groups.HR])
     .range([colors.HD, colors.HR]);
 
+/* *
+ * Stacked bar chart shows bills grouped by keywords and sponsoring parties.  
+ */
 var barView = function() {
 
     var groups = {
@@ -496,6 +497,11 @@ var barView = function() {
     }
 } //end barView
 
+
+
+/* *
+ * Word cloud shows keywords appearing in bills. The size of the keywords is determined by the keyword frequency.  
+ */
 var wordView = function() {
 
   var wordsStr = "";
@@ -558,6 +564,12 @@ function drawWords(words) {
       .text(function(d) { return d.text; });
 }
 
+
+
+/* *
+ * Stacked bar chart shows bills grouped by keywords and sponsoring parties.  
+ */
+//global data variable to facilitate the process of multiple data files/api calls. 
 var graphTotal = {nodes:[], links:[]};
 
 function forceView() {
@@ -571,12 +583,14 @@ function forceView() {
       {"key":"Energy", "value":"data-test/bills-energy-apicall.json"}
     ];
 
+    //read multiple json files
     for (var i = 0; i < dataFiles.length; i++) {
-      //read multiple json data files 
+       
       (function(i) {
+        //generate a keyword node to add to the beginning of the data file
         var keywordNode = {
           "bill_id": "keyword",
-          "last_vote_at": "0",
+          "last_vote_at": "0", //set the last vote year to 0
           "keyword": dataFiles[i].key
         };
 
@@ -591,10 +605,8 @@ function forceView() {
             for(var j=0; j < nodes.length; j++) {
               nodes[j]["keyword"] = key;
             }
-            
             //add the keyword node as the first node for that data file 
             graphTotal.nodes.push(keywordNode);
-
             //update total graph data set  
             graphTotal.nodes = graphTotal.nodes.concat(nodes);
  
@@ -629,23 +641,26 @@ var drawForceView = function() {
       .domain([groups.HD, groups.HR])
       .range([colors.HD, colors.HR]),
 
+  //scaled used for linkDistance: the year with a higher number will have a longer link distance from the center
   year = d3.scale.linear()
       .domain([1994, 2014]) //last 20 years. 
       .range([0,80]); 
 
+  //local data structure to differentiate local vs. global data
   var graph = {nodes:[], links:[]};
 
     //load global dataset 
     graph.nodes = graphTotal.nodes;
 
-    //graph.links = graphTotal.links; 
-    //populate links based on the latest total nodes. 
+    //populate links based on the latest total nodes
+    //the first keyword node  
     var key = graph.nodes[0].keyword;
     var keyId = 0; 
+    //continue to process the data nodes 
     for(i = 0; i < graph.nodes.length; i++) {
        var nextKey = graph.nodes[i].keyword;        
        if(nextKey == key) {
-        //do nothing 
+        //do nothing because the key has not changed  
        }
        else {
         //update the key and keyId
@@ -655,8 +670,8 @@ var drawForceView = function() {
       graph.links.push({"source": keyId, "target": i}); //nodes belong to one keyword group all point to the keyword node for that group
     }
 
-    console.log(graph.nodes);
-    console.log(graph.links);    
+    //console.log(graph.nodes);
+    //console.log(graph.links);    
 
     //remove last-drawn layout first
     if(d3.select("#vis svg")) d3.select("#vis svg").remove();
@@ -678,8 +693,7 @@ var drawForceView = function() {
         .size([width, height])
         .charge(-50)
         .linkDistance(function(d){
-          //console.log(d.target.last_vote_at.substring(0,4));
-          return d.target.last_vote_at.length >= 4? 
+          return d.target.last_vote_at.length >= 4? //data in the file is yyyy-mm-dd; get the year info only
           year(d.target.last_vote_at.substring(0,4)): year(1994); //the link distance between keyword node to itself is 0
         })
         .on("tick", function(d){
@@ -709,14 +723,15 @@ var drawForceView = function() {
     node.append("circle")
         .attr("r", 5)
         .style("fill", function(d) { 
-          if(d.bill_id == "keyword") return "#999966" ; //this is the keyword node
-    
+          if(d.bill_id == "keyword") 
+            return "#999966" ; //this is the keyword node
+  
           var p= d.sponsor.party;
-          var clr; 
-          if(p == "R") clr = groups.HR;
-          else if(p == "D") clr = groups.HD;
+          if(p == "R") 
+            return color(groups.HR);
+          else// (p == "D") 
+            return color(groups.HD);
 
-          return color(clr); 
         });
 
     node.append("svg:text")
@@ -760,7 +775,7 @@ var createDetailVis = function(data){
                         .attr('height', 500)
                         .attr('x', 0)
                         .attr('y', 0)
-                        .style('fill', '#F5F5F1')
+                        .style('fill', '#F5F5F1'),
 
         text = svgDetail.append('foreignObject')
                         .attr('x', 0)

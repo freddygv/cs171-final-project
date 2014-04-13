@@ -62,8 +62,14 @@
           opacity: 0.2;
         }
 
-        .tooltip:hover {
-          opacity: 1;
+        .tooltip:hover,
+        .tooltip.keyword:hover {
+          opacity: 0.9;
+          font-size: 12px;
+        }
+
+        .tooltip.keyword {
+          opacity: 0.7
         }
 
         .link {
@@ -110,10 +116,7 @@
 
       <table>
         <tr>
-            <td><div id="vis">
-                <div id="medicare"></div>
-                </div>
-            </td>
+            <td><div id="vis"></div></td>
             <td><div id="detail-vis"></div></td>
         </tr>
     </table>
@@ -195,7 +198,25 @@ detailVisHeight = 350,
 detailVis = d3.select("#detail-vis").append("svg").attr({
     width:detailVisWidth,
     height:detailVisHeight
-});
+}),
+
+groups = {
+  //SD: "Senate Democrat",
+  HD: "Democrat",
+  //SR: "Senate Republican",
+  HR: "Republican"
+},
+
+colors = {
+  //SD: "#4D94DB",
+  HD: "#0066CC",
+  //SR: "#E06666",
+  HR: "#CC0000"
+},
+
+color = d3.scale.ordinal()
+    .domain([groups.HD, groups.HR])
+    .range([colors.HD, colors.HR]);
 
 var barView = function() {
 
@@ -221,10 +242,13 @@ var barView = function() {
             width: 240
     },  
 
+    //var dataSet = getData(); 
+
     breakdown_url = 'http://congress.api.sunlightfoundation.com/votes?vote_type=passage&result=Passed&fields=voted_at,chamber,bill_id,question,result,breakdown.party&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&query=';
 
     bills_url = 'http://congress.api.sunlightfoundation.com/bills?actions.result=pass&actions.type=vote&fields=sponsor.party,chamber,actions,official_title,short_title,popular_title,bill_id,history.vetoed,history.enacted,last_vote_at&apikey=2282ac571e0b46b69bb7879f4de9b158&per_page=50&page=1&keywords=';
 
+    //note: change "and" to "&" results in certain bars disappearing from the chart
     kword = ["Agriculture and food", "Animals", "Armed forces and national security", "Arts, culture, religion", "Civil rights and liberties, minority issues", "Commerce", "Congress", "Crime and law enforcement", "Economics and public finance", "Education", "Emergency management", "Energy", "Environmental protection", "Families", "Finance and financial sector", "Foreign trade and international finance", "Government operations and politics", "Immigration", "International affairs", "Labor and employment", "Law", "Native Americans", "Private legislation", "Public lands and natural resources", "Science, technology, communications", "Social sciences and history", "Social security and elderly assistance", "Social welfare", "Taxation"];
 
     var vetoed, enacted, passed, failed, dSponsor, rSponsor,iSponsor;
@@ -342,12 +366,14 @@ var barView = function() {
                     };
                 });
             });
+      
 
             //use stack layout 
             stack = d3.layout.stack();
             stack(dataset);
 
-            // console.log(dataset);
+            //console.log("keyword : " + kword[i]);
+            //console.log(dataset);
 
             dataset = dataset.map(function(group) {
                 return group.map(function(d) {
@@ -370,8 +396,7 @@ var barView = function() {
                     .attr('height', height + margin.top + margin.bottom)
                 .append('g')
                     .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
-                    .attr("class", "grid")
-                    .text("BAR VIEW"),
+                    .attr("class", "grid"),
 
             xMax = d3.max(dataset, function(group) {
                 return d3.max(group, function(d) {
@@ -533,7 +558,58 @@ function drawWords(words) {
       .text(function(d) { return d.text; });
 }
 
-var forceView = function() {
+var graphTotal = {nodes:[], links:[]};
+
+function forceView() {
+    //clear dataset first
+    graphTotal = {nodes:[], links:[]};    
+
+    //NOTE FOR IMPLEMENTATION: test data that use the same data structure as the stacked bar view that uses real-time data
+    var dataFiles =
+    [
+      {"key":"Education", "value":"data-test/bills-education-apicall.json"}, 
+      {"key":"Energy", "value":"data-test/bills-energy-apicall.json"}
+    ];
+
+    for (var i = 0; i < dataFiles.length; i++) {
+      //read multiple json data files 
+      (function(i) {
+        var keywordNode = {
+          "bill_id": "keyword",
+          "last_vote_at": "0",
+          "keyword": dataFiles[i].key
+        };
+
+        d3.json(dataFiles[i].value, function(error, data) {
+          if(error) return console.warn(error);
+
+            //process data file 
+            //add keyword to each record
+            var nodes = data.results, //nodes for a single data file
+                key = dataFiles[i].key; 
+
+            for(var j=0; j < nodes.length; j++) {
+              nodes[j]["keyword"] = key;
+            }
+            
+            //add the keyword node as the first node for that data file 
+            graphTotal.nodes.push(keywordNode);
+
+            //update total graph data set  
+            graphTotal.nodes = graphTotal.nodes.concat(nodes);
+ 
+            //draw or redraw the layout  
+            drawForceView();
+          });
+      }) (i);
+    } 
+}
+
+var drawForceView = function() {
+
+//console.log("draw with the latest data ========");
+//console.log(graphTotal.nodes);
+//console.log("========//")
 
   var groups = {
     //SD: "Senate Democrat",
@@ -551,39 +627,61 @@ var forceView = function() {
 
   color = d3.scale.ordinal()
       .domain([groups.HD, groups.HR])
-      .range([colors.HD, colors.HR]);
+      .range([colors.HD, colors.HR]),
 
-  d3.json("data-test/votes-medicare-test.json", function(data) {
-    var graph = {nodes:[], links:[]};
-    var subjectNode = {
-        "bill_id": "Medicare"
+  year = d3.scale.linear()
+      .domain([1994, 2014]) //last 20 years. 
+      .range([0,80]); 
+
+  var graph = {nodes:[], links:[]};
+
+    //load global dataset 
+    graph.nodes = graphTotal.nodes;
+
+    //graph.links = graphTotal.links; 
+    //populate links based on the latest total nodes. 
+    var key = graph.nodes[0].keyword;
+    var keyId = 0; 
+    for(i = 0; i < graph.nodes.length; i++) {
+       var nextKey = graph.nodes[i].keyword;        
+       if(nextKey == key) {
+        //do nothing 
+       }
+       else {
+        //update the key and keyId
+        key = nextKey; //move to the next new keyword group
+        keyId = i; 
+       }
+      graph.links.push({"source": keyId, "target": i}); //nodes belong to one keyword group all point to the keyword node for that group
     }
-    graph.nodes = data.results;
 
-    for(j = 0; j < graph.nodes.length; j++) {
-          graph.links.push({"source": 0, "target": j}); //links from one node, simplifies the subject, not actual votes on the subject
-    }
+    console.log(graph.nodes);
+    console.log(graph.links);    
 
-    graph.nodes.unshift(subjectNode);
+    //remove last-drawn layout first
+    if(d3.select("#vis svg")) d3.select("#vis svg").remove();
 
-    //console.log(graph.nodes);
-    //console.log(graph.links);
-
-    var canvas = d3.select("#vis #medicare").append("svg")
+    //re-draw the latest graph
+    var canvas = d3.select("#vis").append("svg")
         .attr("id", "force-view")
         .attr({
           width: width + margin.left + margin.right,
           height: height + margin.top + margin.bottom
-        });
+        }),
 
-        svg = canvas.append("g").attr({
-            transform: "translate(" + margin.left + "," + margin.top + ")"
+    svg = canvas.append("g").attr({
+          transform: "translate(" + margin.left + "," + margin.top + ")"
         }),
 
     force = d3.layout.force()
+        .nodes(graph.nodes)
         .size([width, height])
         .charge(-50)
-        .linkDistance(100)
+        .linkDistance(function(d){
+          //console.log(d.target.last_vote_at.substring(0,4));
+          return d.target.last_vote_at.length >= 4? 
+          year(d.target.last_vote_at.substring(0,4)): year(1994); //the link distance between keyword node to itself is 0
+        })
         .on("tick", function(d){
           link.attr("x1", function(d) { return d.target.x; })
             .attr("y1", function(d) { return d.target.y; })
@@ -603,6 +701,7 @@ var forceView = function() {
     var node = svg.selectAll(".node")
                   .data(graph.nodes)
                   .enter().append("g").attr("class", "node")
+                  .call(force.drag)
                   .on("click", function(d){
                     createDetailVis(d);
                   });
@@ -610,9 +709,9 @@ var forceView = function() {
     node.append("circle")
         .attr("r", 5)
         .style("fill", function(d) { 
-          if(d.bill_id == "Medicare") return "#F0F0F5" ; //this is the fake node representing the subject
-          
-          var p= d.party;
+          if(d.bill_id == "keyword") return "#999966" ; //this is the keyword node
+    
+          var p= d.sponsor.party;
           var clr; 
           if(p == "R") clr = groups.HR;
           else if(p == "D") clr = groups.HD;
@@ -624,21 +723,29 @@ var forceView = function() {
             .attr("class", "tooltip")
             .attr("dx", 12)
             .attr("dy", ".35em")
-            .text(function(d) { return d.bill_id });
-
+            .text(function(d) { 
+              if(d.bill_id == "keyword") {
+                d3.select(this).attr("class", "tooltip keyword"); 
+                return d.keyword;
+              }
+              else 
+                return d.bill_id; 
+            });
 
     force.nodes(graph.nodes)
           .links(graph.links)
           .start();
-  })
+
 } //end forceView 
 
 var createDetailVis = function(data){
-  var voteDetail = "Vote question: <br/>" + data.question + "<br/><br/>" 
-                + "Vote ID: <br/>" + data.bill_id + "<br/><br/>"
-                + "Voted Year: <br/>" + data.year + "<br/><br/>"
-                + "Result: <br/>" + data.result + "<br/><br/>"
-                + "Source: <br/>" + data.source;
+  console.log(data);
+  var voteDetail = "BILL DETAIL <br/><br/>" 
+                + "Bill Id: <br/>" + data.bill_id + "<br/><br/>"
+                + "Bill Title: <br/>" + data.official_title + "<br/><br/>"
+                + "Keyword: <br/>" + data.keyword + "<br/><br/>"
+                + "Last Voted At: <br/>" + data.last_vote_at + "<br/><br/>"
+                + "Sponsor Party: <br/>" + data.sponsor.party + "<br/><br/>";
 
   // clean the previous graph first
   detailVis.select("g.note").remove();

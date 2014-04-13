@@ -1,0 +1,3359 @@
+{
+
+    "results": [
+        {
+            "actions": [
+                {
+                    "acted_at": "2014-03-31",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1880",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1873",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres405-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2014-03-31",
+            "official_title": "A resolution expressing support for the designation of the week of March 31 through April 4, 2014, as \"National Assistant Principals Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2014-03-11",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1527-1528",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1522",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres380-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2014-03-11",
+            "official_title": "A resolution supporting the goals and ideals of Take Our Daughters and Sons To Work Day.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2014-03-11",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1527-1528",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1521-1522",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres379-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2014-03-11",
+            "official_title": "A resolution congratulating the Pennsylvania State University IFC/Panhellenic Dance Marathon (\"THON\") on its continued success in support of the Four Diamonds Fund at Penn State Hershey Children's Hospital.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2014-02-27",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1252-1253",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1238",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres367-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2014-02-27",
+            "official_title": "A resolution designating March 3, 2014, as \"Read Across America Day\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2014-01-30",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S658",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S657",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres342-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2014-01-30",
+            "official_title": "A resolution designating February 3 through 7, 2014, as \"National School Counseling Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2014-01-16",
+                    "references": [
+                        {
+                            "reference": "CR S448",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2014-01-28",
+                    "references": [
+                        {
+                            "reference": "CR S554",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on Health, Education, Labor, and Pensions discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2014-01-28",
+                    "how": "by Unanimous Consent",
+                    "references": [ ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres334-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2014-01-28",
+            "official_title": "A resolution recognizing the goals of Catholic Schools Week and honoring the valuable contributions of Catholic schools in the United States.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-11-14",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S8069",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S8055",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres295-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-11-14",
+            "official_title": "A resolution expressing the support for the designation of October 20, 2013, as the \"National Day on Writing\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-10-16",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7559",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7539",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres274-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-10-16",
+            "official_title": "A resolution supporting Lights On Afterschool, a national celebration of afterschool programs held on October 17, 2013.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-10-16",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7559",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7538",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres272-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-10-16",
+            "official_title": "A resolution designating the week beginning October 20, 2013, as \"National Character Counts Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-10-03",
+                    "references": [ ],
+                    "text": "Referred to the House Committee on Appropriations.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSAP",
+                            "name": "House Committee on Appropriations"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-10-08T16:35:00Z",
+                    "bill_ids": [
+                        "hres371-113"
+                    ],
+                    "references": [
+                        {
+                            "reference": "CR H6362-6370",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered under the provisions of rule H. Res. 371.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T16:36:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with 40 minute of debate on H.J. Res. 84.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:16:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H6368",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "The previous question was ordered pursuant to the rule.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:17:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H6368-6369",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR H6368",
+                            "type": "text"
+                        }
+                    ],
+                    "text": "Mrs. Capps moved to recommit with instructions to Appropriations.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSAP",
+                            "name": "House Committee on Appropriations"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-10-08T17:17:00Z",
+                    "bill_ids": [
+                        "hjres59-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with 10 minutes of debate on the Capps motion to recommit with instructions. The instructions contained in the motion seek to report the same back to the House forthwith with an amendment to the replace the underlying bill with the Senate amendment to H.J.Res. 59, pending reservation of a point of order.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:21:00Z",
+                    "references": [ ],
+                    "text": "Mr. Rogers (KY) raised a point of order against the motion to recommit with instructions. Mr. Rogers (KY) stated that the provisions of the proposed amendment were not germane. Sustained by the Chair.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:24:00Z",
+                    "references": [ ],
+                    "text": "Mrs. Capps appealed the ruling of the chair. The question was then put on sustaining the ruling of the chair.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:24:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H6369-6370",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Mr. Rogers (KY) moved to table the motion to appeal the ruling of the chair",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:51:00Z",
+                    "references": [ ],
+                    "text": "On motion to table the motion to appeal the ruling of the chair Agreed to by the Yeas and Nays: 226 - 191 (Roll no. 529).",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-08T17:57:00Z",
+                    "how": "roll",
+                    "references": [
+                        {
+                            "reference": "CR H6362",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "suspension": null,
+                    "text": "On passage Passed by recorded vote: 248 - 168 (Roll no. 530).",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "house",
+                    "roll_id": "h530-2013"
+                },
+                {
+                    "acted_at": "2013-10-08T17:57:00Z",
+                    "references": [ ],
+                    "text": "Motion to reconsider laid on the table Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-09",
+                    "references": [ ],
+                    "text": "Received in the Senate. Read the first time. Placed on Senate Legislative Calendar under Read the First Time.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-10",
+                    "calendar": "Senate Legislative",
+                    "number": "213",
+                    "references": [ ],
+                    "text": "Read the second time. Placed on Senate Legislative Calendar under General Orders. Calendar No. 213.",
+                    "type": "calendar",
+                    "under": "General Orders"
+                }
+            ],
+            "bill_id": "hjres84-113",
+            "chamber": "house",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-10-08T17:57:00Z",
+            "official_title": "Making continuing appropriations for Head Start for fiscal year 2014, and for other purposes.",
+            "popular_title": "Head Start for low-income children bill",
+            "short_title": "Head Start Continuing Appropriations Resolution, 2014",
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-09-26",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S6968",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S6961-6962",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres261-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-09-26",
+            "official_title": "A resolution designating the week beginning September 23, 2013, as \"National Historically Black Colleges and Universities Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-09-25",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR 9/24/2013 S6901",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR 9/24/2013 S6894",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres260-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-09-25",
+            "official_title": "A resolution recognizing the month of October 2013 as \"National Principals Month\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-09-25",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR 9/24/2013 S6901",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR 9/24/2013 S6894",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres259-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-09-25",
+            "official_title": "A resolution designating September 2013 as \"Campus Fire Safety Month\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-09-25",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR 9/24/2013 S6901",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR 9/24/2013 S6893",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres257-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-09-25",
+            "official_title": "A resolution designating October 3, 2013, as \"Jumpstart's Read for the Record Day\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-09-25",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR 9/24/2013 S6901",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR 9/24/2013 S6893",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres256-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-09-25",
+            "official_title": "A resolution designating the week of September 23 through 29, 2013, as \"National Adult Education and Family Literacy Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-09-18",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S6609",
+                            "type": "considerstion"
+                        },
+                        {
+                            "reference": "CR S6602",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres240-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-09-18",
+            "official_title": "A resolution designating the week beginning September 15, 2013, as \"National Hispanic-Serving Institutions Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-06-06",
+                    "references": [ ],
+                    "text": "Referred to the Committee on Education and the Workforce, and in addition to the Committee on Financial Services, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-06-06",
+                    "references": [ ],
+                    "text": "Referred to House Education and the Workforce",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-06-06",
+                    "references": [ ],
+                    "text": "Referred to House Financial Services",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSBA",
+                            "name": "House Committee on Financial Services"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-06-19",
+                    "references": [ ],
+                    "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 23 - 16.",
+                    "type": "calendar"
+                },
+                {
+                    "acted_at": "2013-07-11T15:46:00Z",
+                    "references": [ ],
+                    "text": "Reported (Amended) by the Committee on Education and the Workforce. H. Rept. 113-150, Part I.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-07-11T15:46:00Z",
+                    "references": [ ],
+                    "text": "Committee on Financial Services discharged.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSBA",
+                            "name": "House Committee on Financial Services"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-07-11T15:46:00Z",
+                    "calendar": "Union",
+                    "number": "108",
+                    "references": [ ],
+                    "text": "Placed on the Union Calendar, Calendar No. 108.",
+                    "type": "calendar",
+                    "under": null
+                },
+                {
+                    "acted_at": "2013-07-18T01:24:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "Rules Committee Resolution H. Res. 303 Reported to House. Rule provides for consideration of H.R. 5 with 1 hour of general debate. Previous question shall be considered as ordered without intervening motions except motion to recommit with or without instructions. Measure will be considered read. Specified amendments are in order. The resolution makes in order as original text for the purpose of amendment an amendment in the nature of a substitute consisting of the text of Rules Committee Print 113-18.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSRU",
+                            "name": "House Committee on Rules"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-07-18T18:26:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "Rule H. Res. 303 passed House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T18:33:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [
+                        {
+                            "reference": "CR H4619-4722",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR H4629-4679",
+                            "type": "text of amendment in the nature of a substitute"
+                        }
+                    ],
+                    "text": "Considered under the provisions of rule H. Res. 303.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T18:33:00Z",
+                    "references": [ ],
+                    "text": "Rule provides for consideration of H.R. 5 with 1 hour of general debate. Previous question shall be considered as ordered without intervening motions except motion to recommit with or without instructions. Measure will be considered read. Specified amendments are in order. The resolution makes in order as original text for the purpose of amendment an amendment in the nature of a substitute consisting of the text of Rules Committee Print 113-18.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSRU",
+                            "name": "House Committee on Rules"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-07-18T18:34:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "House resolved itself into the Committee of the Whole House on the state of the Union pursuant to H. Res. 303 and Rule XVIII.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T18:34:00Z",
+                    "references": [ ],
+                    "text": "The Speaker designated the Honorable Doc Hastings to act as Chairman of the Committee.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T18:34:00Z",
+                    "references": [ ],
+                    "text": "GENERAL DEBATE - The Committee of the Whole proceeded with one hour of general debate on H.R. 5.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T19:44:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H.Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Kline amendment No. 1.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T19:47:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H.Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Young (AK) amendment No. 2.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T19:56:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Young (AK) amendment No. 2, the Chair put the question on adoption of the amendment and by voice vote, announced that the noes had prevailed. Mr. Young (AK) demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T19:57:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H.Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Cardenas amendment No. 3.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:02:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Luetkemeyer amendment No. 4.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:11:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Luetkemeyer amendment No. 4, the Chair put the question on adoption of the amendment and by voice vote, announced that the noes had prevailed. Mr. Luetkemeyer demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:12:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Jackson Lee amendment No. 5.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:21:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Bentivolio amendment No. 6.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:29:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the McMorris Rodgers amendment No. 7.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:39:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Reed amendment No. 8.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:47:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Benishek amendment No. 9.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:54:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Heck (NV) amendment No. 10.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T20:58:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Meehan amendment No. 11.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:08:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Meehan amendment No. 11, the Chair put the question on adoption of the amendment and by voice vote, announced that the ayes had prevailed. Mr. George Miller (CA) demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:08:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Scalise amendment No. 12.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:19:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Scalise amendment No. 12, the Chair put the question on adoption of the amendment and by voice vote, announced that the ayes had prevailed. Mr. George Miller (CA) demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:20:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Moore amendment No. 13.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:29:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Bishop (UT) amendment No. 14.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:38:00Z",
+                    "references": [ ],
+                    "text": "UNANIMOUS CONSENT REQUEST - Mr. George Miller (CA) asked unanimous consent to vacate his request for a recorded vote on the Scalise amendment No. 12 and that the Chair put the question de novo. Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T21:39:00Z",
+                    "references": [ ],
+                    "text": "UNFINISHED BUSINESS - The Chair announced that the unfinished business was on adoption of amendments, which had been debated earlier and on which further proceedings had been postponed.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:20:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Tonko amendment No. 15.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:26:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Brooks (IN) amendment No. 16.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:34:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Polis amendment No. 17.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:43:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Velazquez amendment No. 18.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:50:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Mullin amendment No. 19.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:53:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Garrett amendment No. 20.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T22:55:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Broun (GA) amendment No. 21.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T23:07:00Z",
+                    "references": [ ],
+                    "text": "Mr. Rokita moved that the Committee rise.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T23:07:00Z",
+                    "references": [ ],
+                    "text": "On motion that the Committee rise Agreed to by voice vote.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18T23:08:00Z",
+                    "references": [ ],
+                    "text": "Committee of the Whole House on the state of the Union rises leaving H.R. 5 as unfinished business.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:06:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H4731-4814",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered as unfinished business.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:15:00Z",
+                    "references": [ ],
+                    "text": "The House resolved into Committee of the Whole House on the state of the Union for further consideration.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:16:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Culberson amendment No. 22.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:23:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Culberson amendment No. 22, the Chair put the question on adoption of the amendment and by voice vote, announced that the ayes had prevailed. Mr. Tierney demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:24:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Fitzpatrick amendment No. 23.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:30:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Jackson Lee amendment No. 24.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:37:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the Jackson Lee amendment No. 24, the Chair put the question on adoption of the amendment and by voice vote, announced that the noes had prevailed. Ms. Jackson Lee demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:38:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 10 minutes of debate on the Cantor amendment No. 25.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T13:53:00Z",
+                    "bill_ids": [
+                        "hres303-113"
+                    ],
+                    "references": [ ],
+                    "text": "DEBATE - Pursuant to the provisions of H. Res. 303, the Committee of the Whole proceeded with 20 minutes of debate on the George Miller (CA) substitute amendment No. 26.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T14:19:00Z",
+                    "references": [ ],
+                    "text": "POSTPONED PROCEEDINGS - At the conclusion of debate on the George Miller (CA) amendment No. 26, the Chair put the question on adoption of the amendment and by voice vote, announced that the noes had prevailed. Mr. George Miller (CA) demanded a recorded vote and the Chair postponed further proceedings on the question of adoption of the amendment until later in the legislative day.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T14:56:00Z",
+                    "references": [ ],
+                    "text": "The House rose from the Committee of the Whole House on the state of the Union to report H.R. 5.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T14:56:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H4808",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "The previous question was ordered pursuant to the rule.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T14:57:00Z",
+                    "references": [ ],
+                    "text": "The House adopted the amendment in the nature of a substitute as agreed to by the Committee of the Whole House on the state of the Union.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T14:58:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H4808-4814",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR H4808-4812",
+                            "type": "text"
+                        }
+                    ],
+                    "text": "Ms. Kuster moved to recommit with instructions to Education and the Workforce.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-07-19T14:58:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with 10 minutes of debate on the Kuster motion to recommit with instructions pending a reservation of a point of order. The instructions contained in the motion seek to require the bill to be reported back to the House with an amendment to prevent lowering standards for children with disabilities, including autistic children. It establishes safety standards for the use of seclusion and restraint in schools so children are not physically and mentally harmed. It also establishes standards for protecting student athletes from concussions. Lastly, it provides for criminal background checks of school and contractor employees who have contact with children. Subsequently, the reservation of a point of order was withdrawn.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T15:06:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H4813",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "The previous question on the motion to recommit with instructions was ordered without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T15:14:00Z",
+                    "references": [ ],
+                    "text": "On motion to recommit with instructions Failed by recorded vote: 196 - 231 (Roll no. 373).",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T15:20:00Z",
+                    "how": "roll",
+                    "references": [ ],
+                    "result": "pass",
+                    "suspension": null,
+                    "text": "On passage Passed by recorded vote: 221 - 207 (Roll no. 374).",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "house",
+                    "roll_id": "h374-2013"
+                },
+                {
+                    "acted_at": "2013-07-19T15:20:00Z",
+                    "references": [ ],
+                    "text": "Motion to reconsider laid on the table Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-19T15:21:00Z",
+                    "references": [ ],
+                    "text": "The Clerk was authorized to correct section numbers, punctuation, and cross references, and to make other necessary technical and conforming corrections in the engrossment of H.R. 5.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-24",
+                    "references": [ ],
+                    "text": "Received in the Senate and Read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                }
+            ],
+            "bill_id": "hr5-113",
+            "chamber": "house",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-07-19T15:20:00Z",
+            "official_title": "To support State and local accountability for public education, protect State and local authority, inform parents of the performance of their children's schools, and for other purposes.",
+            "popular_title": null,
+            "short_title": "Student Success Act",
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-05-22",
+                    "references": [ ],
+                    "text": "Referred to the House Committee on Education and the Workforce.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-07-08",
+                    "references": [ ],
+                    "text": "Referred to the Subcommittee on Early Childhood, Elementary, and Secondary Education.",
+                    "type": "referral"
+                },
+                {
+                    "acted_at": "2013-10-22T21:11:00Z",
+                    "references": [ ],
+                    "text": "Mr. Rokita moved to suspend the rules and pass the bill, as amended.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-22T21:12:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H6647-6651",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered under suspension of the rules.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-22T21:12:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with forty minutes of debate on H.R. 2083.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-22T21:29:00Z",
+                    "how": "by voice vote",
+                    "references": [
+                        {
+                            "reference": "CR H6647-6648",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "suspension": null,
+                    "text": "On motion to suspend the rules and pass the bill, as amended Agreed to by voice vote.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "house"
+                },
+                {
+                    "acted_at": "2013-10-22T21:29:00Z",
+                    "references": [ ],
+                    "text": "The title of the measure was amended. Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-10-28",
+                    "references": [ ],
+                    "text": "Received in the Senate and Read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                }
+            ],
+            "bill_id": "hr2083-113",
+            "chamber": "house",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-10-22T21:29:00Z",
+            "official_title": "To require State educational agencies that receive funding under the Elementary and Secondary Education Act of 1965 to have in effect policies and procedures on background checks for school employees.",
+            "popular_title": null,
+            "short_title": "Protecting Students from Sexual and Violent Predators Act",
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-05-13",
+                    "references": [ ],
+                    "text": "Referred to the House Committee on Education and the Workforce.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-16",
+                    "references": [ ],
+                    "text": "Committee Consideration and Mark-up Session Held.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-16",
+                    "references": [ ],
+                    "text": "Ordered to be Reported (Amended) by Voice Vote.",
+                    "type": "calendar"
+                },
+                {
+                    "acted_at": "2013-05-20T18:54:00Z",
+                    "references": [ ],
+                    "text": "Reported (Amended) by the Committee on Education and the Workforce. H. Rept. 113-83.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-20T18:54:00Z",
+                    "calendar": "Union",
+                    "number": "58",
+                    "references": [ ],
+                    "text": "Placed on the Union Calendar, Calendar No. 58.",
+                    "type": "calendar",
+                    "under": null
+                },
+                {
+                    "acted_at": "2013-05-22T23:03:00Z",
+                    "references": [ ],
+                    "text": "Mr. Messer moved to suspend the rules and pass the bill, as amended.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-22T23:03:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H2895-2898",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered under suspension of the rules.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-22T23:04:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with forty minutes of debate on H.R. 1949.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-22T23:19:00Z",
+                    "how": "by voice vote",
+                    "references": [
+                        {
+                            "reference": "CR H2895-2896",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "suspension": null,
+                    "text": "On motion to suspend the rules and pass the bill, as amended Agreed to by voice vote.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "house"
+                },
+                {
+                    "acted_at": "2013-05-22T23:19:00Z",
+                    "references": [ ],
+                    "text": "Motion to reconsider laid on the table Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23",
+                    "references": [ ],
+                    "text": "Received in the Senate and Read twice and referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                }
+            ],
+            "bill_id": "hr1949-113",
+            "chamber": "house",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-05-22T23:19:00Z",
+            "official_title": "To direct the Secretary of Education to convene the Advisory Committee on Improving Postsecondary Education Data to conduct a study on improvements to postsecondary education transparency at the Federal level.",
+            "popular_title": null,
+            "short_title": "Improving Postsecondary Education Data for Students Act",
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-05-09",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S3352",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S3344",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres138-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-05-09",
+            "official_title": "A resolution congratulating the students, parents, teachers, and administrators of charter schools across the United States for their ongoing contributions to education, and supporting the ideals and goals of the 14th annual National Charter Schools Week, to be celebrated the week of May 5 through May 11, 2013.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-05-09",
+                    "references": [ ],
+                    "text": "Referred to the Committee on Education and the Workforce, and in addition to the Committee on the Budget, for a period to be subsequently determined by the Speaker, in each case for consideration of such provisions as fall within the jurisdiction of the committee concerned.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-09",
+                    "references": [ ],
+                    "text": "Referred to House Education and the Workforce",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-09",
+                    "references": [ ],
+                    "text": "Referred to House Budget",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSBU",
+                            "name": "House Committee on the Budget"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-16",
+                    "references": [ ],
+                    "text": "Committee Consideration and Mark-up Session Held.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-16",
+                    "references": [ ],
+                    "text": "Ordered to be Reported (Amended) by the Yeas and Nays: 24 - 13.",
+                    "type": "calendar"
+                },
+                {
+                    "acted_at": "2013-05-20T18:42:00Z",
+                    "references": [ ],
+                    "text": "Reported (Amended) by the Committee on Education and the Workforce. H. Rept. 113-82, Part I.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-20T18:43:00Z",
+                    "references": [ ],
+                    "text": "Committee on Budget discharged.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSBU",
+                            "name": "House Committee on the Budget"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-20T18:43:00Z",
+                    "calendar": "Union",
+                    "number": "57",
+                    "references": [ ],
+                    "text": "Placed on the Union Calendar, Calendar No. 57.",
+                    "type": "calendar",
+                    "under": null
+                },
+                {
+                    "acted_at": "2013-05-22T23:12:00Z",
+                    "bill_ids": [
+                        "hres232-113"
+                    ],
+                    "references": [ ],
+                    "text": "Rules Committee Resolution H. Res. 232 Reported to House. Rule provides for consideration of H.R. 1911 with 1 hour of general debate. Previous question shall be considered as ordered without intervening motions except motion to recommit with or without instructions. Measure will be considered read. Bill is closed to amendments.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSRU",
+                            "name": "House Committee on Rules"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-23T14:59:00Z",
+                    "bill_ids": [
+                        "hres232-113"
+                    ],
+                    "references": [ ],
+                    "text": "Rule H. Res. 232 passed House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T14:59:00Z",
+                    "bill_ids": [
+                        "hres232-113"
+                    ],
+                    "references": [
+                        {
+                            "reference": "CR H2926-2940",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR H2927",
+                            "type": "text of amendment in the nature of a substitute"
+                        }
+                    ],
+                    "text": "Considered under the provisions of rule H. Res. 232.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T14:59:00Z",
+                    "references": [ ],
+                    "text": "Rule provides for consideration of H.R. 1911 with 1 hour of general debate. Previous question shall be considered as ordered without intervening motions except motion to recommit with or without instructions. Measure will be considered read. Bill is closed to amendments.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T15:00:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with one hour of debate on H.R. 1911.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T15:58:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H2937",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "The previous question was ordered pursuant to the rule.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T15:58:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H2937-2939",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR H2937",
+                            "type": "text"
+                        }
+                    ],
+                    "text": "Ms. Sinema moved to recommit with instructions to Education and the Workforce.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "HSED",
+                            "name": "House Committee on Education and the Workforce"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-23T15:59:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with 10 minutes of debate on the Sinema motion to recommit with instructions pending a reservation of a point of order. The instructions contained in the motion seek to require the bill to be reported back to the House with an amendment adding a new section pertaining to protecting students from teaser interest rates that lead to higher long-term costs. Subsequently, the reservation was removed.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T16:07:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H2938",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "The previous question on the motion to recommit with instructions was ordered without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T16:32:00Z",
+                    "references": [ ],
+                    "text": "On motion to recommit with instructions Failed by the Yeas and Nays: 194 - 223 (Roll no. 182).",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-05-23T16:41:00Z",
+                    "how": "roll",
+                    "references": [ ],
+                    "result": "pass",
+                    "suspension": null,
+                    "text": "On passage Passed by recorded vote: 221 - 198 (Roll no. 183).",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "house",
+                    "roll_id": "h183-2013"
+                },
+                {
+                    "acted_at": "2013-05-23T16:41:00Z",
+                    "references": [ ],
+                    "text": "Motion to reconsider laid on the table Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-06-03",
+                    "references": [ ],
+                    "text": "Received in the Senate.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-17",
+                    "references": [ ],
+                    "text": "Read the first time. Placed on Senate Legislative Calendar under Read the First Time.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-18",
+                    "calendar": "Senate Legislative",
+                    "number": "139",
+                    "references": [ ],
+                    "text": "Read the second time. Placed on Senate Legislative Calendar under General Orders. Calendar No. 139.",
+                    "type": "calendar",
+                    "under": "General Orders"
+                },
+                {
+                    "acted_at": "2013-07-24",
+                    "references": [
+                        {
+                            "reference": "CR S5863-5894",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Measure laid before Senate by unanimous consent.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-24",
+                    "how": "roll",
+                    "references": [
+                        {
+                            "reference": "CR S5894",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Passed Senate, under the order of 7/23/2013, having achieved 60 votes in the affirmative, with an amendment by Yea-Nay Vote. 81 - 18. Record Vote Number: 185.",
+                    "type": "vote",
+                    "vote_type": "vote2",
+                    "chamber": "senate",
+                    "roll_id": "s185-2013"
+                },
+                {
+                    "acted_at": "2013-07-24",
+                    "references": [ ],
+                    "text": "Message on Senate action sent to the House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-31T20:13:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H5214-5221",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Mr. Kline moved that the House suspend the rules and agree to the Senate amendment.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-31T20:13:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with forty minutes of debate on the motion to agree in the Senate amendment to H.R. 1911.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-31T20:13:00Z",
+                    "references": [ ],
+                    "text": "At the conclusion of debate, the Yeas and Nays were demanded and ordered. Pursuant to the provisions of clause 8, rule XX, the chair announced that further proceedings on the motion would be postponed.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-31T22:21:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H5240-5241",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered as unfinished business.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-07-31T22:22:00Z",
+                    "how": "roll",
+                    "references": [
+                        {
+                            "reference": "CR H5214-5215",
+                            "type": "text as House agreed to Senate amendment"
+                        }
+                    ],
+                    "result": "pass",
+                    "suspension": null,
+                    "text": "On motion that the House suspend the rules and agree to the Senate amendment Agreed to by the Yeas and Nays: (2/3 required): 392 - 31 (Roll no. 426).",
+                    "type": "vote",
+                    "vote_type": "pingpong",
+                    "chamber": "house",
+                    "roll_id": "h426-2013"
+                },
+                {
+                    "acted_at": "2013-07-31T22:22:00Z",
+                    "references": [ ],
+                    "text": "Motion to reconsider laid on the table Agreed to without objection.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-08-01",
+                    "references": [ ],
+                    "text": "Presented to President.",
+                    "type": "topresident"
+                },
+                {
+                    "acted_at": "2013-08-09",
+                    "references": [ ],
+                    "text": "Signed by President.",
+                    "type": "signed"
+                },
+                {
+                    "acted_at": "2013-08-09",
+                    "congress": "113",
+                    "law": "public",
+                    "number": "28",
+                    "references": [ ],
+                    "text": "Became Public Law No: 113-28.",
+                    "type": "enacted"
+                }
+            ],
+            "bill_id": "hr1911-113",
+            "chamber": "house",
+            "history": {
+                "enacted": true,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-07-31T22:22:00Z",
+            "official_title": "To amend the Higher Education Act of 1965 to establish interest rates for new loans made on or after July 1, 2013, to direct the Secretary of Education to convene the Advisory Committee on Improving Postsecondary Education Data to conduct a study on improvements to postsecondary education transparency at the Federal level, and for other purposes.",
+            "popular_title": null,
+            "short_title": "Bipartisan Student Loan Certainty Act of 2013",
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-04-25",
+                    "references": [
+                        {
+                            "reference": "CR S3050",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-08",
+                    "references": [
+                        {
+                            "reference": "CR S3282",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on Health, Education, Labor, and Pensions discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-05-08",
+                    "how": "by Unanimous Consent",
+                    "references": [ ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres126-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-05-08",
+            "official_title": "A resolution recognizing the teachers of the United States for their contributions to the development and progress of our country.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-03-18",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1911",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1908",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres79-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-03-18",
+            "official_title": "A resolution supporting the goals and ideals of Take Our Daughters and Sons To Work Day.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-02-27",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S957",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S947",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres61-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-02-27",
+            "official_title": "A resolution designating March 1, 2013, as \"Read Across America Day\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-02-25",
+                    "references": [ ],
+                    "text": "Referred to the House Committee on House Administration.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "HSHA",
+                            "name": "House Committee on House Administration"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-02-26T17:29:00Z",
+                    "references": [ ],
+                    "text": "Mrs. Miller (MI) moved to suspend the rules and agree to the resolution.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-02-26T17:30:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H643-647",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered under suspension of the rules.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-02-26T17:30:00Z",
+                    "references": [ ],
+                    "text": "DEBATE - The House proceeded with forty minutes of debate on H. Res. 77.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-02-26T17:56:00Z",
+                    "references": [ ],
+                    "text": "At the conclusion of debate, the Yeas and Nays were demanded and ordered. Pursuant to the provisions of clause 8, rule XX, the Chair announced that further proceedings on the motion would be postponed.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-02-26T20:32:00Z",
+                    "references": [
+                        {
+                            "reference": "CR H648",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Considered as unfinished business.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2013-02-26T20:42:00Z",
+                    "how": "roll",
+                    "references": [
+                        {
+                            "reference": "CR H643",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "suspension": true,
+                    "text": "On motion to suspend the rules and agree to the resolution Agreed to by the Yeas and Nays: (2/3 required): 411 - 3 (Roll no. 49).",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "house",
+                    "roll_id": "h49-2013"
+                },
+                {
+                    "acted_at": "2013-02-26T20:42:00Z",
+                    "references": [ ],
+                    "text": "Motion to reconsider laid on the table Agreed to without objection.",
+                    "type": "action"
+                }
+            ],
+            "bill_id": "hres77-113",
+            "chamber": "house",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-02-26T20:42:00Z",
+            "official_title": "Establishing an academic competition in the fields of science, technology, engineering, and mathematics among students in Congressional districts.",
+            "popular_title": null,
+            "short_title": "Academic Competition Resolution of 2013",
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-02-13",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S717-718",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S717",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres34-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-02-13",
+            "official_title": "A resolution commemorating the 150th anniversary of Kansas State University.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-02-13",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S717-718",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S717",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres33-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-02-13",
+            "official_title": "A resolution commemorating the 150th anniversary of Emporia State University.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-02-07",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S569",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S527-528",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres27-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-02-07",
+            "official_title": "A resolution designating the week of February 4 through 8, 2013, as \"National School Counseling Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-01-31",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S448",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S446",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres25-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-01-31",
+            "official_title": "A resolution honoring Gonzaga University on its 125th anniversary.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-01-30",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S408",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S406",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres22-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-01-30",
+            "official_title": "A resolution recognizing the goals of Catholic Schools Week and honoring the valuable contributions of Catholic schools in the United States.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2013-01-24",
+                    "references": [
+                        {
+                            "reference": "CR S292",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on the Judiciary.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-01-30",
+                    "references": [
+                        {
+                            "reference": "CR S407-408",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on the Judiciary discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2013-01-30",
+                    "how": "by Unanimous Consent",
+                    "references": [ ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres13-113",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2013-01-30",
+            "official_title": "A resolution congratulating the members of Delta Sigma Theta Sorority, Inc. for 100 years of service to communities throughout the United States and the world, and commending Delta Sigma Theta Sorority, Inc. for its promotion of sisterhood, scholarship, and service.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2009-10-07",
+                    "references": [
+                        {
+                            "reference": "CR S10223",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2009-10-14",
+                    "references": [
+                        {
+                            "reference": "CR S10439-10440",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on Health, Education, Labor, and Pensions discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2009-10-14",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S10439-10440",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                },
+                {
+                    "acted_at": "2009-10-15T14:03:00Z",
+                    "references": [ ],
+                    "text": "Received in the House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2009-10-15",
+                    "references": [ ],
+                    "text": "Message on Senate action sent to the House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2009-10-15T15:18:00Z",
+                    "references": [ ],
+                    "text": "Held at the desk.",
+                    "type": "action"
+                }
+            ],
+            "bill_id": "sconres46-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2009-10-14",
+            "official_title": "A concurrent resolution recognizing the benefits of service-learning and expressing support for the goals of the National Learn and Serve Challenge.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2009-03-23",
+                    "references": [
+                        {
+                            "reference": "CR S3618",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on the Judiciary.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2009-03-24",
+                    "references": [
+                        {
+                            "reference": "CR S3735",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on the Judiciary discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2009-03-24",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S3735",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                },
+                {
+                    "acted_at": "2009-03-25T18:22:00Z",
+                    "references": [ ],
+                    "text": "Received in the House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2009-03-25",
+                    "references": [ ],
+                    "text": "Message on Senate action sent to the House.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2009-03-25T18:32:00Z",
+                    "references": [ ],
+                    "text": "Held at the desk.",
+                    "type": "action"
+                }
+            ],
+            "bill_id": "sconres12-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2009-03-24",
+            "official_title": "A concurrent resolution recognizing and honoring the signing by President Abraham Lincoln of the legislation authorizing the establishment of collegiate programs at Gallaudet University.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-12-16",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S10367",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S10367",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S10412",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres702-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-12-16",
+            "official_title": "A resolution recognizing the work and importance of special education teachers.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-11-18",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S8107-8108",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S8108",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S8065-8066",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres684-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-11-18",
+            "official_title": "A resolution recognizing the 35th anniversary of the enactment of the Education for All Handicapped Children Act of 1975.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-09-29",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7773-7774",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7773",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S7837-7838",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres668-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-09-29",
+            "official_title": "A resolution expressing support for the designation of October 20, 2010, as the \"National Day on Writing\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-09-28",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7666-7669",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7668",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S7637",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres659-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-09-28",
+            "official_title": "A resolution supporting \"Lights on Afterschool\", a national celebration of afterschool programs.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-09-28",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7666-7669",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7668",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S7637",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres658-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-09-28",
+            "official_title": "A resolution designating the week beginning October 17, 2010, as \"National Character Counts Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-09-21",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7299-7300",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7300",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S7280",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres635-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-09-21",
+            "official_title": "A resolution designating the week beginning September 19, 2010, as \"National Hispanic-Serving Institutions Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-09-21",
+                    "references": [
+                        {
+                            "reference": "CR S7279-7280",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on the Judiciary.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-11-19",
+                    "references": [
+                        {
+                            "reference": "CR S8205-8206",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on the Judiciary discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-11-19",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S8205-8206",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres631-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-11-19",
+            "official_title": "A resolution designating the week beginning on November 8, 2010, as National School Psychology Week.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-08-05",
+                    "references": [
+                        {
+                            "reference": "CR S6905",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on the Judiciary.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-09-14",
+                    "references": [
+                        {
+                            "reference": "CR S7095-7096",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on the Judiciary discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-09-14",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7096",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres607-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-09-14",
+            "official_title": "A resolution recognizing the month of October 2010 as \"National Principals Month\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-07-27",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S6341",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S6341",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S6308",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres595-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-07-27",
+            "official_title": "A resolution designating the week beginning September 12, 2010, as \"National Historically Black Colleges and Universities Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-07-22",
+                    "references": [
+                        {
+                            "reference": "CR S6221-6222",
+                            "type": null
+                        }
+                    ],
+                    "text": "Sponsor introductory remarks on measure.",
+                    "type": "action"
+                },
+                {
+                    "acted_at": "2010-07-22",
+                    "references": [
+                        {
+                            "reference": "CR S6221",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on Health, Education, Labor, and Pensions.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-09-21",
+                    "references": [ ],
+                    "text": "Senate Committee on Health, Education, Labor, and Pensions discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSHR",
+                            "name": "Senate Committee on Health, Education, Labor, and Pensions"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-09-21",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S7299",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S7299",
+                            "type": "text as passed Senate"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres593-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-09-21",
+            "official_title": "A resolution expressing support for designation of October 7, 2010, as \"Jumpstart's Read for the Record Day\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-05-05",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S3291",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S3291",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S3171",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres514-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-05-05",
+            "official_title": "A resolution congratulating the students, parents, teachers, and administrators of charter schools across the United States for ongoing contributions to education and supporting the ideals and goals of the 11th annual National Charter Schools Week, to be held May 2 through May 8, 2010.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-03-26",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S2167-2168",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S2167-2168",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S2163-2164",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres471-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-03-26",
+            "official_title": "A resolution recognizing the University of Southern Mississippi for 100 years of service and excellence in higher education.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-03-18",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1756",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1756",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S1754",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres462-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-03-18",
+            "official_title": "A resolution recognizing Thursday, April 22, 2010, as \"Take Our Daughters and Sons To Work Day\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-03-16",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1631",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1631",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S1625",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres456-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-03-16",
+            "official_title": "A resolution congratulating Radford University on the 100th anniversary of the university.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-03-04",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1129-1131",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S1131",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S1184",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres438-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-03-04",
+            "official_title": "A resolution designating March 2, 2010, as \"Read Across America Day\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-02-26",
+                    "references": [
+                        {
+                            "reference": "CR S823-824",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "text": "Referred to the Committee on the Judiciary.",
+                    "type": "referral",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-03-04",
+                    "references": [
+                        {
+                            "reference": "CR S1129",
+                            "type": "consideration"
+                        }
+                    ],
+                    "text": "Senate Committee on the Judiciary discharged by Unanimous Consent.",
+                    "type": "action",
+                    "committees": [
+                        {
+                            "committee_id": "SSJU",
+                            "name": "Senate Committee on the Judiciary"
+                        }
+                    ]
+                },
+                {
+                    "acted_at": "2010-03-04",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S1129",
+                            "type": "text"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Resolution agreed to in Senate without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres426-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-03-04",
+            "official_title": "A resolution designating the week of February 28 through March 7, 2010, as \"School Social Work Week\".",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "D"
+            }
+        },
+        {
+            "actions": [
+                {
+                    "acted_at": "2010-02-02",
+                    "how": "by Unanimous Consent",
+                    "references": [
+                        {
+                            "reference": "CR S448",
+                            "type": "consideration"
+                        },
+                        {
+                            "reference": "CR S448",
+                            "type": "text as passed Senate"
+                        },
+                        {
+                            "reference": "CR S446",
+                            "type": "text of measure as introduced"
+                        }
+                    ],
+                    "result": "pass",
+                    "text": "Submitted in the Senate, considered, and agreed to without amendment and with a preamble by Unanimous Consent.",
+                    "type": "vote",
+                    "vote_type": "vote",
+                    "chamber": "senate"
+                }
+            ],
+            "bill_id": "sres406-111",
+            "chamber": "senate",
+            "history": {
+                "enacted": false,
+                "vetoed": false
+            },
+            "last_vote_at": "2010-02-02",
+            "official_title": "A resolution recognizing the goals of Catholic Schools Week and honoring the valuable contributions of Catholic schools in the United States.",
+            "popular_title": null,
+            "short_title": null,
+            "sponsor": {
+                "party": "R"
+            }
+        }
+    ],
+    "count": 253,
+    "page": {
+        "count": 50,
+        "per_page": 50,
+        "page": 1
+    }
+
+}

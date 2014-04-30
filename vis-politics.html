@@ -216,7 +216,22 @@ color = d3.scale.ordinal()
 /* *
  * Stacked bar chart shows bills grouped by keywords and sponsoring parties.  
  */
-var barView = function() {
+function barView() {
+    // for some reason, groups, colors and color vars need to be redefined within barView; otherwise issues appear between transitions of different views. 
+    var groups = {
+      HD: "Democrat",
+      HR: "Republican"
+    },
+
+    colors = {
+      HD: "#0066CC",
+      HR: "#CC0000"
+    },
+
+    color = d3.scale.ordinal()
+        .domain([groups.HD, groups.HR])
+        .range([colors.HD, colors.HR]);
+
     var legendPanel = {
             width: 240
     },  
@@ -296,8 +311,8 @@ var barView = function() {
       var dset = [];
       var dataset = [];
 
-      console.log(aggData[0]);
-      console.log(rawData[0]);
+      //console.log(aggData[0]);
+      //console.log(rawData[0]);
 
       aggData.forEach(function(kw) {
 
@@ -348,7 +363,7 @@ var barView = function() {
               .attr('width', width + margin.left + margin.right + legendPanel.width)
               .attr('height', height + margin.top + margin.bottom)
           .append('g')
-              .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')')
+              .attr('transform', 'translate(' + margin.left + ',' + 0 + ')')
               .attr("class", "grid"),
 
       xMax = d3.max(dataset, function(group) {
@@ -430,12 +445,11 @@ var barView = function() {
       legend.append("text")
           .attr("x", width + 35)
           .attr("y", 30)
-          //.attr("dy", ".15em")
           .style("text-anchor", "start")
-          .text(function(d) { return d; });
+          .text(function(d) { return d + ": House & Senate"; });
       }
     );
-}; //end barView
+} //end barView
 
 
 
@@ -715,7 +729,7 @@ var drawForceView = function() {
 } //end forceView 
 
 var createDetailVis = function(data){
-  console.log(data);
+
   var billDetail;
 
   if(data.bill_id == "keyword") {
@@ -754,6 +768,7 @@ var createDetailVis = function(data){
                         .append("xhtml:body")
                         .html(billDetail);
 }
+barView();
 </script>
 </body>
 </html>

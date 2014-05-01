@@ -757,6 +757,46 @@ var drawForceView = function() {
 
 } //end forceView 
 
+var createDetailVis = function(data){
+  console.log(data);
+  var billDetail;
+
+  if(data.bill_id == "keyword") {
+    billDetail = "BILL CLUSTER <br/><br/>" 
+                + "Keyword: <br/>" + data.keyword + "<br/><br/>";
+  }
+  else {
+    billDetail = "BILL DETAIL <br/><br/>" 
+                + "Bill Id: <br/>" + data.bill_id + "<br/><br/>"
+                + "Bill Question: <br/>" + data.question + "<br/><br/>"
+                + "Keyword: <br/>" + data.keyword + "<br/><br/>"
+                + "Voted Year: <br/>" + data.year + "<br/><br/>"
+                + "Sponsor Party: <br/>" + data.sponsor + "<br/><br/>";
+  }
+
+  // clean the previous graph first
+  detailVis.select("g.note").remove();
+
+  // draw the new vis 
+  var svgDetail = detailVis.append("g")
+    .attr("class", "note")
+    .attr('transform', 'translate(' + 30 + ', ' + 30 + ')');
+
+  var rect = svgDetail.append('rect')
+                        .attr('width', 350)
+                        .attr('height', 500)
+                        .attr('x', 0)
+                        .attr('y', 0)
+                        .style('fill', '#F5F5F1'),
+
+        text = svgDetail.append('foreignObject')
+                        .attr('x', 0)
+                        .attr('y', 0)
+                        .attr('width', 330)
+                        .attr('height', 500)
+                        .append("xhtml:body")
+                        .html(billDetail);
+}
 
 
 </script>

@@ -10,6 +10,7 @@
         #control-menu {
           margin: 20px;
           font-size: 20px;
+          color: black;
         }
 
         button {
@@ -51,6 +52,10 @@
             background: #999966;
         }
 
+        text {
+        	font-weight: bold;
+        }
+        
         text,
         .tooltip,
         .note {
@@ -59,7 +64,7 @@
         }
     
         .tooltip {
-          opacity: 0.2;
+			opacity: .08;
         }
 
         .tooltip:hover,
@@ -74,7 +79,7 @@
         }
 
         .link {
-          stroke: #F0F0F5;
+          stroke: #E8E8E8;
           stroke-width: 1.5px;
          }
 
@@ -116,7 +121,7 @@
     <body>
 
       <!--placeholders for visual elements-->
-      <div id="control-menu">A Look into Successful Federal Legislation in </div>
+      <div id="control-menu">A Look into Successful Federal Legislation Bills in </div>
 
       <table id="force-view-container">
         <tr>
@@ -129,7 +134,7 @@
     <!--control panel-->
     d3.select("body div#control-menu").append("button")
       .text("Numbers") //stacked bar chart by keywords
-      .attr("class", "btn-red")
+      .attr("class", "btn-red active")
       .on("click", function() {
             d3.select(this)
             .attr("class", "btn-red active"); 
@@ -188,7 +193,7 @@
     <!--end control panel-->  
 
 var margin = {
-    top: 50,
+    top: 150,
     right: 50,
     bottom: 50,
     left: 250
@@ -362,7 +367,7 @@ function barView() {
       });
 
       // console.log("inverted dataset")
-      // console.log(dataset);
+      console.log(dataset[0][0].x);
 
       var svg = d3.select('body')
           .append('svg')
@@ -392,7 +397,7 @@ function barView() {
       xAxis = d3.svg.axis()
           .scale(xScale)
           .orient('bottom');
-
+          
       yAxis = d3.svg.axis()
           .scale(yScale)
           .orient('left');
@@ -403,7 +408,7 @@ function barView() {
           .append('g')
           .style('fill', function(d, i) {
               return color(i);
-          }),
+          });
 
       rects = groups.selectAll('rect')
           .data(function(d) { return d; })
@@ -412,12 +417,13 @@ function barView() {
           .attr('x', function(d) { return xScale(d.x0); })
           .attr('y', function(d, i) { return yScale(d.y); })
           .attr('height', function(d) { return yScale.rangeBand(); })
-          .attr('width', function(d) { return xScale(d.x); });
+          .attr('width', function(d) { return xScale(d.x); })
+		  .append("title");
 
       dLabel = rects.append("text")
                     .attr("x", function(d) { return xScale(d.x) - 3; })
                     .attr("y", function(d) { return yScale.rangeBand(); })
-                    .text(function(d) { return d.x })
+                    .text(function(d) { return ("Number of Bills: "+d.x) })
                     .attr("fill", "black")
                     .style("font-size", "18px")
                     .attr("font-family", "sans-serif")
@@ -433,6 +439,14 @@ function barView() {
           .attr("dy", "1.7em")
           .style("text-anchor", "end")
           .text("Number of enacted bills sponsored, House and Senate");
+          
+	  svg.append('g')
+          .attr('class', 'x axis')
+          .call(xAxis)
+          .append("text")
+          .attr("x", width - 15)
+          .attr("y", +15)
+          .attr("dy", "1.7em")
 
       svg.append('g')
           .attr('class', 'y axis')
@@ -474,6 +488,11 @@ function barView() {
  */
 var wordView = function() {
 
+  var t = document.createTextNode("Loading... Please wait 5 seconds.");
+  document.body.appendChild(t);
+  document.body.style.fontSize = "17px";
+  document.body.style.color = "red";
+
   var wordsStr = "";
   var words = {};
 
@@ -490,15 +509,20 @@ var wordView = function() {
 
     words = countWords(wordsStr); 
 
-    d3.layout.cloud().size([800, 800])
-      .words(words)
-      .rotate(0)
-      .fontSize(function(d) { return d.size * 3; })
-      .on("end", drawWords)
-      .start();
-
+    var delay=100;	//0.5 seconds
+    setTimeout(function(){
+		//your code to be executed after 1 seconds
+		d3.layout.cloud().size([800, 800])
+		.words(words)
+		.rotate(0)
+		.fontSize(function(d) { return d.size * 3; })
+		.on("end", drawWords)
+		.start();
+	
+	document.body.removeChild(t);
+    },delay); 
+    
   });
-
 } //end wordView
 
 function countWords (d) {
@@ -523,8 +547,8 @@ function drawWords(words) {
 
   d3.select("body").append("svg")
       .attr("id", "word-view")
-      .attr("width", 1000)
-      .attr("height", 1000)
+      .attr("width", 900)
+      .attr("height", 900)
     .append("g")
       .attr("transform", "translate(500,400)")
     .selectAll("text")
@@ -601,7 +625,7 @@ var drawForceView = function() {
   //increased size for the force layout due to large data size 
   width = height = 900,
   margin = {
-    top: 50,
+    top: 5,
     right: 50,
     bottom: 50,
     left: 50
@@ -731,46 +755,8 @@ var drawForceView = function() {
 
 } //end forceView 
 
-var createDetailVis = function(data){
 
-  var billDetail;
 
-  if(data.bill_id == "keyword") {
-    billDetail = "BILL CLUSTER <br/><br/>" 
-                + "Keyword: <br/>" + data.keyword + "<br/><br/>";
-  }
-  else {
-    billDetail = "BILL DETAIL <br/><br/>" 
-                + "Bill Id: <br/>" + data.bill_id + "<br/><br/>"
-                + "Bill Question: <br/>" + data.question + "<br/><br/>"
-                + "Keyword: <br/>" + data.keyword + "<br/><br/>"
-                + "Voted Year: <br/>" + data.year + "<br/><br/>"
-                + "Sponsor Party: <br/>" + data.sponsor + "<br/><br/>";
-  }
-
-  // clean the previous graph first
-  detailVis.select("g.note").remove();
-
-  // draw the new vis 
-  var svgDetail = detailVis.append("g")
-    .attr("class", "note")
-    .attr('transform', 'translate(' + 30 + ', ' + 30 + ')');
-
-  var rect = svgDetail.append('rect')
-                        .attr('width', 350)
-                        .attr('height', 500)
-                        .attr('x', 0)
-                        .attr('y', 0)
-                        .style('fill', '#F5F5F1'),
-
-        text = svgDetail.append('foreignObject')
-                        .attr('x', 0)
-                        .attr('y', 0)
-                        .attr('width', 330)
-                        .attr('height', 500)
-                        .append("xhtml:body")
-                        .html(billDetail);
-}
 </script>
 </body>
 </html>

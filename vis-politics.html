@@ -323,9 +323,6 @@ function barView() {
       var dset = [];
       var dataset = [];
 
-      //console.log(aggData[0]);
-      //console.log(rawData[0]);
-
       aggData.forEach(function(kw) {
 
         rset.push({"keyword": kw.keyword, "vote": kw.r_sponsor});
@@ -352,9 +349,6 @@ function barView() {
       stack = d3.layout.stack();
       stack(dataset);
 
-      //console.log("keyword : " + kword[i]);
-      //console.log(dataset);
-
       dataset = dataset.map(function(group) {
           return group.map(function(d) {
               // horizontal bars, invert the x and y values, and y0 becomes x0
@@ -366,8 +360,6 @@ function barView() {
           });
       });
 
-      // console.log("inverted dataset")
-      console.log(dataset[0][0].x);
 
       var svg = d3.select('body')
           .append('svg')
@@ -540,7 +532,6 @@ function countWords (d) {
   var words = [];
   for (var i in counts) { words.push({"text": i, "size": counts[i]})}
   words.sort(function(a, b) {return b.size - a.size})
-  //console.log(words)
   return words;
 }
 
@@ -662,9 +653,6 @@ var drawForceView = function() {
       graph.links.push({"source": keyId, "target": i}); //nodes belong to one keyword group all point to the keyword node for that group
     }
 
-    //console.log(graph.nodes);
-    //console.log(graph.links);    
-
     //remove last-drawn layout first
     if(d3.select("#vis svg")) d3.select("#vis svg").remove();
 
@@ -758,7 +746,6 @@ var drawForceView = function() {
 } //end forceView 
 
 var createDetailVis = function(data){
-  console.log(data);
   var billDetail;
 
   if(data.bill_id == "keyword") {
@@ -766,7 +753,7 @@ var createDetailVis = function(data){
                 + "Keyword: <br/>" + data.keyword + "<br/><br/>";
   }
   else {
-    billDetail = "BILL DETAIL <br/><br/>" 
+    billDetail = "<b>BILL DETAIL </b><br/><br/>" 
                 + "Bill Id: <br/>" + data.bill_id + "<br/><br/>"
                 + "Bill Question: <br/>" + data.question + "<br/><br/>"
                 + "Keyword: <br/>" + data.keyword + "<br/><br/>"
@@ -780,7 +767,7 @@ var createDetailVis = function(data){
   // draw the new vis 
   var svgDetail = detailVis.append("g")
     .attr("class", "note")
-    .attr('transform', 'translate(' + 30 + ', ' + 30 + ')');
+    .attr('transform', 'translate(' + 15 + ', ' + 30 + ')');
 
   var rect = svgDetail.append('rect')
                         .attr('width', 350)

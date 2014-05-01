@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Access-Control-Allow-Origin" content="*">
+        <!-- <meta charset="utf-8"> -->
+        <style>
+        body {
+          font: 12px Arial, Helvetica, sans-serif;
+        }
+        #control-menu {
+          margin: 20px;
+          font-size: 20px;
+          color: black;
+        }
+
+        button {
+            color: #fff;
+            font-size: 16px;
+            text-decoration: none;
+            line-height: 20px;
+            vertical-align: baseline;
+            padding: 8px 16px;
+            border:none;
+            border-radius: 2px;
+            margin: 0 10px;
+            width: 120px;
+        }
+
+        .btn-red {
+          background-color: #F8DEDE;
+        }
+        .btn-red:hover,
+        .btn-red.active {
+            background: #CC0000;
+        }
+
+        .btn-blue {
+            background: #DDEAF8;
+        }
+
+        .btn-blue:hover,
+        .btn-blue.active {
+            background: #0066CC;
+        }
+
+        .btn-blend {
+            background: #F5F5F1;
+        }
+
+        .btn-blend:hover,
+        .btn-blend.active {
+            background: #999966;
+        }
+
+        text {
+        	font-weight: bold;
+        }
+        
+        text,
+        .tooltip,
+        .note {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 10px;
+        }
+    
+        .tooltip {
+			opacity: .08;
+        }
+
+        .tooltip:hover,
+        .tooltip.keyword:hover {
+          opacity: 0.9;
+          font-size: 15px;
+        }
+
+        .tooltip.keyword {
+          opacity: 0.7;
+          font-size: 12px;
+        }
+
+        .link {
+          stroke: #E8E8E8;
+          stroke-width: 1.5px;
+         }
+
+        .axis line,
+        .axis path {
+            fill: none;
+            stroke: #C0C0C0;
+            shape-rendering: crispEdges;
+        }
+
+        .axis path,
+        .axis line {
+            stroke: lightgrey;
+            fill: none;
+        }
+        .grid .x.axis line {
+            stroke: lightgrey;
+        }
+
+        .axis text,
+        .legend {
+            stroke: #E0E0EB;
+            stroke-width: .3px;
+        }        
+
+        .axis text {
+            font: 12px sans-serif;
+            fill: black;
+        }
+
+        table#force-view-container {display: none;}
+    </style>
+
+    <script src="libs/d3.v3.min.js"></script>
+    <script src="libs/d3.layout.cloud.js"></script>
+    <script src="libs/jquery.1.11.min.js"></script>
+
+    </head>
+    <body>
+
+      <!--placeholders for visual elements-->
+      <div id="control-menu">A Look into Successful Federal Legislation Bills in </div>
+
+      <table id="force-view-container">
+        <tr>
+            <td><div id="vis"></div></td>
+            <td><div id="detail-vis"></div></td>
+        </tr>
+    </table>
+    
+    <script>
+    <!--control panel-->
+    d3.select("body div#control-menu").append("button")
+      .text("Numbers") //stacked bar chart by keywords
+      .attr("class", "btn-red active")
+      .on("click", function() {
+            d3.select(this)
+            .attr("class", "btn-red active"); 
+            //deselect other buttons
+            d3.select("#control-menu button.btn-blue").attr("class", "btn-blue");
+            d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
+            //delete/hide other views
+            if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
+            d3.select("table#force-view-container").style("display","none"); 
+            if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
+            if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
+            if(d3.select("#bar-view")) {d3.select("#bar-view").remove()} 
+
+            barView();
+        });
+
+    d3.select("body div#control-menu").append("button")
+      .text("Details") //force layout view to display individual bills grouped by keywords
+      .attr("class", "btn-blue")
+      .on({
+        "click": function() {
+            d3.select(this).attr("class", "btn-blue active"); 
+            //deselect other buttons
+            d3.select("#control-menu button.btn-red").attr("class", "btn-red");
+            d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
+            //delete other views
+            if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
+            if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
+            if(d3.select("#force-view")) {d3.select("#force-view").remove()} 
+            //make detail vis area visible 
+            d3.select("table#force-view-container").style("display","block"); 
+            if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","block")}
+            forceView();
+        }
+    });  
+
+    d3.select("body div#control-menu").append("button")
+      .text("Topics") //show keywords contained in bill titles
+      .attr("class", "btn-blend")
+      .on({
+        "click": function() {
+            d3.select(this).attr("class", "btn-blend active"); 
+            //deselect other buttons
+            d3.select("#control-menu button.btn-red").attr("class", "btn-red");
+            d3.select("#control-menu button.btn-blue").attr("class", "btn-blue");
+            //delete/hide other views
+            if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
+            if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
+            d3.select("table#force-view-container").style("display","none"); 
+            if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
+            if(d3.select("#word-view")) {d3.select("#word-view").remove()}  
+
+            wordView();
+        }
+    });   
+    <!--end control panel-->  
+
+var margin = {
+    top: 150,
+    right: 50,
+    bottom: 50,
+    left: 250
+},
+width = 760 - margin.left - margin.right,
+height = 800 - margin.top - margin.bottom,
+detailVisWidth = 350,
+detailVisHeight = 350,
+
+detailVis = d3.select("#detail-vis").append("svg").attr({
+    width:detailVisWidth,
+    height:detailVisHeight
+}),
+
+groups = {
+  HD: "Democrat",
+  HR: "Republican"
+},
+
+colors = {
+  HD: "#0066CC",
+  HR: "#CC0000"
+},
+
+color = d3.scale.ordinal()
+    .domain([groups.HD, groups.HR])
+    .range([colors.HD, colors.HR]);
+
+// render bar view by default 
+barView();
+
+/* *
+ * Stacked bar chart shows bills grouped by keywords and sponsoring parties.  
+ */
+function barView() {
+    // for some reason, groups, colors and color vars need to be redefined within barView; otherwise issues appear between transitions of different views. 
+    var groups = {
+      HD: "Democrat",
+      HR: "Republican"
+    },
+
+    colors = {
+      HD: "#0066CC",
+      HR: "#CC0000"
+    },
+
+    color = d3.scale.ordinal()
+        .domain([groups.HD, groups.HR])
+        .range([colors.HD, colors.HR]);
+
+    var legendPanel = {
+            width: 240
+    },  
+
+    //note: change "and" to "&" results in certain bars disappearing from the chart
+    kword = ["Agriculture and food", "Animals", "Armed forces and national security", "Arts, culture, religion", "Civil rights and liberties, minority issues", "Commerce", "Congress", "Crime and law enforcement", "Economics and public finance", "Education", "Emergency management", "Energy", "Environmental protection", "Families", "Finance and financial sector", "Foreign trade and international finance", "Government operations and politics", "Immigration", "International affairs", "Labor and employment", "Law", "Native Americans", "Private legislation", "Public lands and natural resources", "Science, technology, communications", "Social sciences and history", "Social security and elderly assistance", "Social welfare", "Taxation"];
+
+    var vetoed, enacted, passed, failed, dSponsor, rSponsor,iSponsor;
+    var rawData = [];
+    var aggData = [];
+    var voteData = [];
+
+    d3.json("data-final.json", function(error, data) {
+      if(error) return console.warn(error);
+
+      var bills = [];
+
+      var current_keyword, votes, sponsors;
+      
+      for (var kw in data) { 
+        current = data[kw];
+
+        current_keyword = kw;
+        bills = current.bills;
+        votes = current.votes;
+        sponsors = current.sponsors;
+
+        for (var b in bills) {
+
+          bill_id = b;
+          curr = bills[b];
+
+          try {
+
+            if(bill_id !== undefined) {
+              bills.push({
+                "question": curr.question,
+                "popular_title": curr.popular,
+                "bill_id": curr.bill_id,
+                "year": curr.year,
+                "source": curr.source,
+                "chamber": curr.chamber,
+                "summary_short": curr.short_summary,
+                "sponsor_party": curr.sponsor
+
+              });
+            }
+
+          } catch (err) {
+            console.log("Undefined attribute in bill");
+          }
+
+        }
+    
+        rawData.push({
+          "keyword": current_keyword, 
+          "details": bills
+
+        }); 
+
+        aggData.push({
+          "keyword": current_keyword,
+
+          "r_votes": votes.R,
+          "d_votes": votes.D,
+          "i_votes": votes.I,
+
+          "r_sponsor": sponsors.R,
+          "d_sponsor": sponsors.D,
+          "i_sponsor": sponsors.I
+
+        });
+
+      }
+
+      var rset = [];
+      var dset = [];
+      var dataset = [];
+
+      aggData.forEach(function(kw) {
+
+        rset.push({"keyword": kw.keyword, "vote": kw.r_sponsor});
+        dset.push({"keyword": kw.keyword, "vote": kw.d_sponsor});
+
+      });
+    
+      dataset.push({"data":rset, "name": groups.HR});
+      dataset.push({"data":dset, "name": groups.HD});
+
+      series = dataset.map(function(d) { return d.name; });
+
+      dataset = dataset.map(function(d) {
+          return d.data.map(function(o, i) {
+              return {
+                  x: o.keyword,
+                  y: o.vote
+              };
+          });
+      });
+      
+
+      //use stack layout 
+      stack = d3.layout.stack();
+      stack(dataset);
+
+      dataset = dataset.map(function(group) {
+          return group.map(function(d) {
+              // horizontal bars, invert the x and y values, and y0 becomes x0
+              return {
+                  x: d.y,
+                  y: d.x,
+                  x0: d.y0
+              };
+          });
+      });
+
+
+      var svg = d3.select('body')
+          .append('svg')
+              .attr("id", "bar-view")
+              .attr('width', width + margin.left + margin.right + legendPanel.width)
+              .attr('height', height + margin.top + margin.bottom)
+          .append('g')
+              .attr('transform', 'translate(' + margin.left + ',' + 30 + ')')
+              .attr("class", "grid"),
+
+      xMax = d3.max(dataset, function(group) {
+          return d3.max(group, function(d) {
+              return d.x + d.x0;
+          });
+      }),
+      
+      xScale = d3.scale.linear()
+          .domain([0, xMax])
+          .range([0, width - margin.right]);
+
+      keywords = dataset[0].map(function(d) { return d.y; });
+
+      yScale = d3.scale.ordinal()
+          .domain(keywords)
+          .rangeRoundBands([0, height], 0.6);
+
+      xAxis = d3.svg.axis()
+          .scale(xScale)
+          .orient('bottom');
+          
+      yAxis = d3.svg.axis()
+          .scale(yScale)
+          .orient('left');
+
+      groups = svg.selectAll('g')
+          .data(dataset)
+          .enter()
+          .append('g')
+          .style('fill', function(d, i) {
+              return color(i);
+          });
+
+      rects = groups.selectAll('rect')
+          .data(function(d) { return d; })
+          .enter()
+          .append('rect')
+          .attr('x', function(d) { return xScale(d.x0); })
+          .attr('y', function(d, i) { return yScale(d.y); })
+          .attr('height', function(d) { return yScale.rangeBand(); })
+          .attr('width', function(d) { return xScale(d.x); })
+		  .append("title");
+
+      dLabel = rects.append("text")
+                    .attr("x", function(d) { return xScale(d.x) - 3; })
+                    .attr("y", function(d) { return yScale.rangeBand(); })
+                    .text(function(d) { return ("Number of Bills: "+d.x) })
+                    .attr("fill", "black")
+                    .style("font-size", "18px")
+                    .attr("font-family", "sans-serif")
+                    //.attr("text-anchor", "end");
+
+      svg.append('g')
+          .attr('class', 'x axis')
+          .attr('transform', 'translate(0,' + height + ')')
+          .call(xAxis)
+          .append("text")
+          .attr("x", width - 15)
+          .attr("y", +15)
+          .attr("dy", "1.7em")
+          .style("text-anchor", "end")
+          .text("Number of enacted bills sponsored, House and Senate");
+          
+	  svg.append('g')
+          .attr('class', 'x axis')
+          .call(xAxis)
+          .append("text")
+          .attr("x", width - 15)
+          .attr("y", -30) // add xaxis label on top of the top xaxis
+          .attr("dy", "1.7em")
+          .style("text-anchor", "end")
+          .text("Number of enacted bills sponsored, House and Senate");
+
+      svg.append('g')
+          .attr('class', 'y axis')
+          .call(yAxis);
+
+      svg.append('rect')
+          .attr('fill', 'none')
+          .attr('width', 160)
+          .attr('height', 30 * dataset.length)
+          .attr('x', width + margin.left)
+          .attr('y', 0)
+
+      var legend = svg.selectAll(".legend")
+          .data(series) 
+          .enter().append("g")
+          .attr("class", "legend")
+          .attr("transform", function(d, i) { return "translate(0," + i * 20 + ")"; });
+
+      legend.append("rect")
+          .attr("x", width + 20)
+          .attr("y", 22)
+          .attr("width", 10)
+          .attr("height", 10)
+          .style("fill", color);
+
+      legend.append("text")
+          .attr("x", width + 35)
+          .attr("y", 30)
+          .style("text-anchor", "start")
+          .text(function(d) { return d + ": House & Senate"; });
+      }
+    );
+} //end barView
+
+
+
+/* *
+ * Word cloud shows keywords appearing in bills. The size of the keywords is determined by the keyword frequency.  
+ */
+var wordView = function() {
+
+  var t = document.createTextNode("Loading... Please wait 5 seconds.");
+  document.body.appendChild(t);
+  document.body.style.fontSize = "15px";
+  document.body.style.color = "#999966";
+
+  var wordsStr = "";
+  var words = {};
+
+  d3.json("data-final.json", function(data) {
+      
+    var values = d3.values(data); 
+
+    for(var i=0; i<values.length; i++) {
+      var bills = values[i].bills;
+      for(var j=0; j<bills.length; j++){
+        wordsStr += bills[j].question;
+      }
+    }
+
+    words = countWords(wordsStr); 
+
+    var delay=100;	//0.5 seconds
+    setTimeout(function(){
+		//your code to be executed after 1 seconds
+		d3.layout.cloud().size([800, 800])
+		.words(words)
+		.rotate(0)
+		.fontSize(function(d) { return d.size * 3; })
+		.on("end", drawWords)
+		.start();
+	
+	document.body.removeChild(t);
+    },delay); 
+    
+  });
+} //end wordView
+
+function countWords (d) {
+  var wordsStr = d; 
+  var ignore = ['services','service','department','facility','award','american','affairs','internal','personnel','programs','secretary','information','general','establish','authorize','provisions','agencies','building','members','modify','making','district','system','authority','program','ending','relating','postal','further','additional','activities','th','allow','honor','extend','an','laws','located','require','disctrict','joint','continuing','related','direct','make','related','post','office','clarify','street','state','through','under','who','center','year','such','code','from','at','were','one','are','and','the','to','a','of','for','as','i','with','it','is','on','that','this','can','in','be','has','if', '--', 'act', 'or', 'table', 'other', 'res', 'passage', 'bill', 'amend', 'agreeing', 'any', 'by', 'motion', 'law', 'use', 'amdt', 'xviii', 'improve', 'instructions','consideration', 'sgr', 'question','recommit','agreement','observe','repeal','conditioning','resolution','ordering','title','houseon','executive','nomination','right','rights','execution','secretaries', 'needs','rate','congressional','states', 'pn', 'enactments', 'previous', 'block', 'provider', 'providing','amendment','purposeson'];
+
+  wordsArray = wordsStr.toLowerCase().replace(/[^a-z\-]/g," ").split(" "); //remove non characters, split by empty space 
+  counts={}
+  for( i in wordsArray) {
+    if(wordsArray[i].length > 1 && $.inArray(wordsArray[i], ignore) < 0) 
+      counts[wordsArray[i]] ? counts[wordsArray[i]]+=1 : counts[wordsArray[i]]=1;
+  }
+  var words = [];
+  for (var i in counts) { words.push({"text": i, "size": counts[i]})}
+  words.sort(function(a, b) {return b.size - a.size})
+  return words;
+}
+
+function drawWords(words) {
+  var fill = d3.scale.category20();
+
+  d3.select("body").append("svg")
+      .attr("id", "word-view")
+      .attr("width", 900)
+      .attr("height", 900)
+    .append("g")
+      .attr("transform", "translate(500,400)")
+    .selectAll("text")
+      .data(words.slice(0,50)) // only show top 50 words
+    .enter().append("text")
+      .style("font-size", function(d) { return d.size + "px"; })
+      .style("font-family", "arial")
+      .style("fill", function(d, i) { return fill(i); })
+      .attr("text-anchor", "middle")
+      .attr("transform", function(d) {
+        return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+      })
+      .text(function(d) { return d.text; });
+}
+
+
+
+/* *
+ * Stacked bar chart shows bills grouped by keywords and sponsoring parties.  
+ */
+//global data variable to facilitate the process of multiple data files/api calls. 
+var graphTotal = {nodes:[], links:[]};
+
+function forceView() {
+    //clear dataset first
+    graphTotal = {nodes:[], links:[]};    
+
+    d3.json("data-final.json", function(error, data) {
+      if(error) return console.warn(error);
+
+      var keys = d3.keys(data);             
+
+      for(var i=0; i < keys.length; i++) {
+        var key = keys[i];
+        var nodes = data[key].bills; 
+        
+        for(var j=0; j < nodes.length; j++) {
+          nodes[j]["keyword"] = key;
+        }              
+      
+        //generate a keyword node
+        var keywordNode = {
+          "bill_id": "keyword",
+          "year": "0", // set the vote year to 0 
+          "keyword": key
+        };
+      
+        graphTotal.nodes.push(keywordNode);
+        //update total graph data set  
+        graphTotal.nodes = graphTotal.nodes.concat(nodes);
+      }
+
+      //draw or redraw the layout  
+      drawForceView();
+    }); // end d3.json
+}
+
+var drawForceView = function() {
+
+  var groups = {
+    HD: "Democrat",
+    HR: "Republican"
+  },
+
+  colors = {
+    HD: "#0066CC",
+    HR: "#CC0000"
+  },
+
+  color = d3.scale.ordinal()
+      .domain([groups.HD, groups.HR])
+      .range([colors.HD, colors.HR]),
+
+  //increased size for the force layout due to large data size 
+  width = height = 900,
+  margin = {
+    top: 5,
+    right: 50,
+    bottom: 50,
+    left: 50
+  },
+
+  //scaled used for linkDistance: the year with a higher number will have a longer link distance from the center
+  year = d3.scale.linear()
+      .domain([1994, 2014]) //last 20 years. 
+      .range([0,80]); 
+
+  //local data structure to differentiate local vs. global data
+  var graph = {nodes:[], links:[]};
+
+    //load global dataset 
+    graph.nodes = graphTotal.nodes;
+
+    //populate links based on the latest total nodes
+    //the first keyword node  
+    var key = graph.nodes[0].keyword;
+    var keyId = 0; 
+    //continue to process the data nodes 
+    for(i = 0; i < graph.nodes.length; i++) {
+       var nextKey = graph.nodes[i].keyword;        
+       if(nextKey == key) {
+        //do nothing because the key has not changed  
+       }
+       else {
+        //update the key and keyId
+        key = nextKey; //move to the next new keyword group
+        keyId = i; 
+       }
+      graph.links.push({"source": keyId, "target": i}); //nodes belong to one keyword group all point to the keyword node for that group
+    }
+
+    //remove last-drawn layout first
+    if(d3.select("#vis svg")) d3.select("#vis svg").remove();
+
+    //re-draw the latest graph
+    var canvas = d3.select("#vis").append("svg")
+        .attr("id", "force-view")
+        .attr({
+          width: width + margin.left + margin.right,
+          height: height + margin.top + margin.bottom
+        }),
+
+    svg = canvas.append("g").attr({
+          transform: "translate(" + margin.left + "," + margin.top + ")"
+        }),
+
+    force = d3.layout.force()
+        .nodes(graph.nodes)
+        .size([width, height])
+        .gravity(.2)
+        .charge(-50)
+        .linkDistance(function(d){
+          return d.target.year == 0? //keyword node has year 0 
+          year(1994): year(d.target.year); //the link distance between keyword node to itself is 0
+
+        })
+        .on("tick", function(d){
+          link.attr("x1", function(d) { return d.target.x; })
+            .attr("y1", function(d) { return d.target.y; })
+            .attr("x2", function(d) { return d.source.x; })
+            .attr("y2", function(d) { return d.source.y; });
+
+          node.attr("transform", function(d) { 
+            return "translate("+d.x+","+d.y+")"; 
+          });
+        });
+
+    var link = svg.selectAll(".link")
+                  .data(graph.links)
+                  .enter().append("line")
+                  .attr("class", "link");
+
+    var node = svg.selectAll(".node")
+                  .data(graph.nodes)
+                  .enter().append("g").attr("class", "node")
+                  .call(force.drag)
+                  .on("click", function(d){
+                    createDetailVis(d);
+                  });
+
+    node.append("circle")
+        .attr("r", function(d){
+          if(d.bill_id == "keyword") 
+            return 6 ;
+          else 
+            return 4;         
+        })
+        .style("fill", function(d) { 
+          if(d.bill_id == "keyword") 
+            return "#999966" ; //this is the keyword node
+  
+          var p= d.sponsor;
+          if(p == "R") 
+            return color(groups.HR);
+          else// (p == "D") 
+            return color(groups.HD);
+
+        })
+        .attr("class", function(d){
+          if(d.bill_id == "keyword") 
+            return "keyword" ;         
+        });
+        
+
+    node.append("svg:text")
+            .attr("class", "tooltip")
+            .attr("dx", 12)
+            .attr("dy", ".35em")
+            .text(function(d) { 
+              if(d.bill_id == "keyword") {
+                d3.select(this).attr("class", "tooltip keyword"); 
+                return d.keyword;
+              }
+              else 
+                return d.bill_id; 
+            });
+
+    force.nodes(graph.nodes)
+          .links(graph.links)
+          .start();
+
+} //end forceView 
+
+var createDetailVis = function(data){
+  var billDetail;
+
+  if(data.bill_id == "keyword") {
+    billDetail = "BILL CLUSTER <br/><br/>" 
+                + "Keyword: <br/>" + data.keyword + "<br/><br/>";
+  }
+  else {
+    billDetail = "<b>BILL DETAIL </b><br/><br/>" 
+                + "Bill Id: <br/>" + data.bill_id + "<br/><br/>"
+                + "Bill Question: <br/>" + data.question + "<br/><br/>"
+                + "Keyword: <br/>" + data.keyword + "<br/><br/>"
+                + "Voted Year: <br/>" + data.year + "<br/><br/>"
+                + "Sponsor Party: <br/>" + data.sponsor + "<br/><br/>";
+  }
+
+  // clean the previous graph first
+  detailVis.select("g.note").remove();
+
+  // draw the new vis 
+  var svgDetail = detailVis.append("g")
+    .attr("class", "note")
+    .attr('transform', 'translate(' + 15 + ', ' + 30 + ')');
+
+  var rect = svgDetail.append('rect')
+                        .attr('width', 350)
+                        .attr('height', 500)
+                        .attr('x', 0)
+                        .attr('y', 0)
+                        .style('fill', '#F5F5F1'),
+
+        text = svgDetail.append('foreignObject')
+                        .attr('x', 0)
+                        .attr('y', 0)
+                        .attr('width', 330)
+                        .attr('height', 500)
+                        .append("xhtml:body")
+                        .html(billDetail);
+}
+
+
+</script>
+</body>
+</html>

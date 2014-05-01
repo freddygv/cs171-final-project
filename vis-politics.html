@@ -104,6 +104,8 @@
             font: 12px sans-serif;
             fill: gray;
         }
+
+        table#force-view-container {display: none;}
     </style>
 
     <script src="libs/d3.v3.min.js"></script>
@@ -116,7 +118,7 @@
       <!--placeholders for visual elements-->
       <div id="control-menu">A Look into Successful Federal Legislation in </div>
 
-      <table>
+      <table id="force-view-container">
         <tr>
             <td><div id="vis"></div></td>
             <td><div id="detail-vis"></div></td>
@@ -136,6 +138,7 @@
             d3.select("#control-menu button.btn-blend").attr("class", "btn-blend");
             //delete/hide other views
             if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
+            d3.select("table#force-view-container").style("display","none"); 
             if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
             if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
             if(d3.select("#bar-view")) {d3.select("#bar-view").remove()} 
@@ -157,8 +160,8 @@
             if(d3.select("svg#word-view")) {d3.select("svg#word-view").remove()}
             if(d3.select("#force-view")) {d3.select("#force-view").remove()} 
             //make detail vis area visible 
+            d3.select("table#force-view-container").style("display","block"); 
             if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","block")}
-
             forceView();
         }
     });  
@@ -175,6 +178,7 @@
             //delete/hide other views
             if(d3.select("svg#bar-view")) {d3.select("svg#bar-view").remove()}
             if(d3.select("svg#force-view")) {d3.select("svg#force-view").remove()}
+            d3.select("table#force-view-container").style("display","none"); 
             if(d3.select("#detail-vis")) {d3.select("#detail-vis").style("display","none")}
             if(d3.select("#word-view")) {d3.select("#word-view").remove()}  
 
@@ -212,6 +216,9 @@ colors = {
 color = d3.scale.ordinal()
     .domain([groups.HD, groups.HR])
     .range([colors.HD, colors.HR]);
+
+// render bar view by default 
+barView();
 
 /* *
  * Stacked bar chart shows bills grouped by keywords and sponsoring parties.  
@@ -461,29 +468,16 @@ var wordView = function() {
   var wordsStr = "";
   var words = {};
 
-  /* reading votes
-  d3.json("data-test/sunlight-votes-2014.json", function(data) {
-       $.each(data.results, function(j, vote){
-        wordsStr += vote.question;  
-      })
-  */
-
-  //reading bills' official titles.
-   d3.json("data-final.json", function(data) {
+  d3.json("data-final.json", function(data) {
       
-      /*
-      $.each(data.results, function(j, bill){
-        wordsStr += bill.official_title;  
-      })
-*/
-      var values = d3.values(data); 
+    var values = d3.values(data); 
 
-      for(var i=0; i<values.length; i++) {
-        var bills = values[i].bills;
-        for(var j=0; j<bills.length; j++){
-          wordsStr += bills[j].question;
-        }
+    for(var i=0; i<values.length; i++) {
+      var bills = values[i].bills;
+      for(var j=0; j<bills.length; j++){
+        wordsStr += bills[j].question;
       }
+    }
 
     words = countWords(wordsStr); 
 
@@ -500,7 +494,7 @@ var wordView = function() {
 
 function countWords (d) {
   var wordsStr = d; 
-  var ignore = ['provisions','agencies','building','members','modify','making','district','system','authority','program','ending','relating','postal','further','additional','activities','th','allow','honor','extend','an','laws','located','require','disctrict','joint','continuing','related','direct','make','related','post','office','clarify','street','state','through','under','who','center','year','such','code','from','at','were','one','are','and','the','to','a','of','for','as','i','with','it','is','on','that','this','can','in','be','has','if', '--', 'act', 'or', 'table', 'other', 'res', 'passage', 'bill', 'amend', 'agreeing', 'any', 'by', 'motion', 'law', 'use', 'amdt', 'xviii', 'improve', 'instructions','consideration', 'sgr', 'question','recommit','agreement','observe','repeal','conditioning','resolution','ordering','title','houseon','executive','nomination','right','rights','execution','secretaries', 'needs','rate','congressional','states', 'pn', 'enactments', 'previous', 'block', 'provider', 'providing','amendment','purposeson'];
+  var ignore = ['services','service','department','facility','award','american','affairs','internal','personnel','programs','secretary','information','general','establish','authorize','provisions','agencies','building','members','modify','making','district','system','authority','program','ending','relating','postal','further','additional','activities','th','allow','honor','extend','an','laws','located','require','disctrict','joint','continuing','related','direct','make','related','post','office','clarify','street','state','through','under','who','center','year','such','code','from','at','were','one','are','and','the','to','a','of','for','as','i','with','it','is','on','that','this','can','in','be','has','if', '--', 'act', 'or', 'table', 'other', 'res', 'passage', 'bill', 'amend', 'agreeing', 'any', 'by', 'motion', 'law', 'use', 'amdt', 'xviii', 'improve', 'instructions','consideration', 'sgr', 'question','recommit','agreement','observe','repeal','conditioning','resolution','ordering','title','houseon','executive','nomination','right','rights','execution','secretaries', 'needs','rate','congressional','states', 'pn', 'enactments', 'previous', 'block', 'provider', 'providing','amendment','purposeson'];
 
   wordsArray = wordsStr.toLowerCase().replace(/[^a-z\-]/g," ").split(" "); //remove non characters, split by empty space 
   counts={}
@@ -768,7 +762,6 @@ var createDetailVis = function(data){
                         .append("xhtml:body")
                         .html(billDetail);
 }
-barView();
 </script>
 </body>
 </html>

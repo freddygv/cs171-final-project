@@ -414,6 +414,15 @@ function barView() {
           .attr('height', function(d) { return yScale.rangeBand(); })
           .attr('width', function(d) { return xScale(d.x); });
 
+      dLabel = rects.append("text")
+                    .attr("x", function(d) { return xScale(d.x) - 3; })
+                    .attr("y", function(d) { return yScale.rangeBand(); })
+                    .text(function(d) { return d.x })
+                    .attr("fill", "black")
+                    .style("font-size", "18px")
+                    .attr("font-family", "sans-serif")
+                    //.attr("text-anchor", "end");
+
       svg.append('g')
           .attr('class', 'x axis')
           .attr('transform', 'translate(0,' + height + ')')
@@ -434,7 +443,7 @@ function barView() {
           .attr('width', 160)
           .attr('height', 30 * dataset.length)
           .attr('x', width + margin.left)
-          .attr('y', 0);
+          .attr('y', 0)
 
       var legend = svg.selectAll(".legend")
           .data(series) 
@@ -628,7 +637,7 @@ var drawForceView = function() {
     }
 
     //console.log(graph.nodes);
-    console.log(graph.links);    
+    //console.log(graph.links);    
 
     //remove last-drawn layout first
     if(d3.select("#vis svg")) d3.select("#vis svg").remove();

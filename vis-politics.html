@@ -375,7 +375,7 @@ function barView() {
               .attr('width', width + margin.left + margin.right + legendPanel.width)
               .attr('height', height + margin.top + margin.bottom)
           .append('g')
-              .attr('transform', 'translate(' + margin.left + ',' + 0 + ')')
+              .attr('transform', 'translate(' + margin.left + ',' + 30 + ')')
               .attr("class", "grid"),
 
       xMax = d3.max(dataset, function(group) {
@@ -445,8 +445,10 @@ function barView() {
           .call(xAxis)
           .append("text")
           .attr("x", width - 15)
-          .attr("y", +15)
+          .attr("y", -30) // add xaxis label on top of the top xaxis
           .attr("dy", "1.7em")
+          .style("text-anchor", "end")
+          .text("Number of enacted bills sponsored, House and Senate");
 
       svg.append('g')
           .attr('class', 'y axis')
@@ -490,8 +492,8 @@ var wordView = function() {
 
   var t = document.createTextNode("Loading... Please wait 5 seconds.");
   document.body.appendChild(t);
-  document.body.style.fontSize = "17px";
-  document.body.style.color = "red";
+  document.body.style.fontSize = "15px";
+  document.body.style.color = "#999966";
 
   var wordsStr = "";
   var words = {};

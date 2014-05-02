@@ -4,6 +4,7 @@
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
 		<!-- <meta charset="utf-8"> -->
 		<style>
+		
 		body {
 			font: 12px Arial, Helvetica, sans-serif;
 		}
@@ -113,6 +114,14 @@
 		}
 
 		table#force-view-container {display: none;}
+		
+		#credits {
+			background-color: #F3F3F1;
+			color: #000000;
+			font-size: 14px;
+			line-height: 40px;
+			padding-left: 20px;
+}
 		</style>
 
 		<script src="libs/d3.v3.min.js"></script>
@@ -121,7 +130,9 @@
 	</head>
 	
 	<body>
-		<div id="control-menu">A Look into Successful Federal Legislation Bills in </div>
+		<div id="control-menu">A Look into Successful Federal Legislation Bills in</div>
+		
+		<p id="credits">Created By: <b>Yash Patel, Allie Ai, Freddy Vallenilla</b>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTo view <b>Data</b>, <a href="https://github.com/yashspatel23/cs171-final-project/blob/gh-pages/data-final.json">click here</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTo view <b>Process Book</b>, <a href="https://github.com/yashspatel23/cs171-final-project/blob/gh-pages/Process_Book.pdf">click here</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTo view <b>Screencast</b>, <a href="http://youtu.be/NL0nVFofFkU">click here</a></p>
 
 		<table id="force-view-container">
 			<tr>
@@ -191,7 +202,7 @@
 			}
 		});   
 		<!--end control panel-->  
-
+		
 		var margin = {
 			top: 150,
 			right: 50,
@@ -438,7 +449,7 @@
 				.attr('width', 160)
 				.attr('height', 30 * dataset.length)
 				.attr('x', width + margin.left)
-				.attr('y', 0)
+				.attr('y', 0);
 
 				var legend = svg.selectAll(".legend")
 								.data(series) 
@@ -468,7 +479,7 @@
 		 */
 		var wordView = function() {
 
-			var t = document.createTextNode("Loading... Please wait 5 seconds.");
+			var t = document.createTextNode("Loading... Please wait 5-10 seconds.");
 			document.body.appendChild(t);
 			document.body.style.fontSize = "15px";
 			document.body.style.color = "#999966";

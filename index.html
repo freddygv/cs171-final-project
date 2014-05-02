@@ -4,6 +4,7 @@
 		<meta http-equiv="Access-Control-Allow-Origin" content="*">
 		<!-- <meta charset="utf-8"> -->
 		<style>
+		
 		body {
 			font: 12px Arial, Helvetica, sans-serif;
 		}
@@ -113,6 +114,12 @@
 		}
 
 		table#force-view-container {display: none;}
+		
+		#credits {
+			color: black;
+			font-size: 15px;
+			padding-left: 20px;
+		}
 		</style>
 
 		<script src="libs/d3.v3.min.js"></script>
@@ -122,6 +129,8 @@
 	
 	<body>
 		<div id="control-menu">A Look into Successful Federal Legislation Bills in </div>
+		
+		<p id="credits">Visualization Created By: Yash Patel, Allie Ai, Freddy Vallenilla.&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTo view Data, <a href="https://github.com/yashspatel23/cs171-final-project/blob/gh-pages/data-final.json">click here</a>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTo view Process Book, click here</p>
 
 		<table id="force-view-container">
 			<tr>
@@ -191,7 +200,7 @@
 			}
 		});   
 		<!--end control panel-->  
-
+		
 		var margin = {
 			top: 150,
 			right: 50,
@@ -438,7 +447,7 @@
 				.attr('width', 160)
 				.attr('height', 30 * dataset.length)
 				.attr('x', width + margin.left)
-				.attr('y', 0)
+				.attr('y', 0);
 
 				var legend = svg.selectAll(".legend")
 								.data(series) 

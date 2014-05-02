@@ -5,7 +5,7 @@ A Look into Successful Federal Legislation Bills
 #####Website URL: http://yashspatel23.github.io/cs171-final-project/<br>Screencast URL: 
 
 
-<br><br><br>
+<br><br>
 #####File Explanation:
 * /libs: This directory contains the necessary libraries needed for this project. It is used by index.html.
 * API Notes.md: This file contains information on how to use the Sunlight API and certain API calls that we made to create our data structure.

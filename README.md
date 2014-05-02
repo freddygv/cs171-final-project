@@ -11,3 +11,4 @@ A Look into Successful Federal Legislation Bills
 * README.md: This file contains website and screencast URLS, and explains the role of each file.
 * data-final.json: This file has our data structure that contains all the information we pulled from the API. It is used by index.html.
 * index.html: This is our <b>MAIN</b> project file that contains all the code used to create our visualization.
+* api_requests.py: This file contains code to pull information from the Sunlight API. This is used to create our data structure.
